@@ -1,0 +1,613 @@
+{
+  "_note": "Product catalog. Mirrors Shopify product structure (handle, title, productType, tags, variants with title/price/sku). Edit here or run `npm run shopify:pull` to refresh from Shopify.",
+  "bookingAddons": [
+    {
+      "key": "puddleLights",
+      "title": "Puddle Lights",
+      "price": "49.00"
+    }
+  ],
+  "products": [
+    {
+      "handle": "ambient-lighting-3y",
+      "title": "Ambient Lighting",
+      "vendor": "Mobile EV Works",
+      "productType": "Ambient Lighting",
+      "compatibleModels": [
+        "Model 3",
+        "Model Y"
+      ],
+      "tags": [
+        "Model 3",
+        "Model Y",
+        "mobile-install"
+      ],
+      "tileImage": "/assets/img/tile-ambient-3y.webp",
+      "seo": {
+        "title": "Tesla Model 3/Y Ambient Lighting — Free Mobile Install | Mobile EV Works",
+        "description": "Ambient Lighting for Tesla Model 3/Y, installed at your home or office anywhere in LA & SoCal. Free mobile install, 6-month warranty, 4.9★ rated. Available within 24 hours."
+      },
+      "includedFallback": "Every purchase includes everything needed for a complete, professional installation experience.",
+      "installInfo": "Free mobile installation by experienced professionals. Available 7 days a week — we install at your driveway or workplace for maximum convenience. Servicing all of SoCal.",
+      "warranty": "We take pride in every installation and stand behind our work. Our Mobile Warranty & Support commitment means we're available to assist if you ever need help after your install, providing convenient service and ongoing support long after the job is complete.",
+      "addon": {
+        "enabled": true,
+        "title": "Extended 1-year warranty",
+        "price": "59.99"
+      },
+      "variants": [
+        {
+          "title": "Standard Kit",
+          "price": "289.99",
+          "sku": "ambient-lighting-3y-standard-kit",
+          "images": [
+            "/assets/img/products/ambient-lighting-3y-v1-1.webp",
+            "/assets/img/products/ambient-lighting-3y-v1-2.webp"
+          ],
+          "details": "Our premium custom designed ambient lighting brings a modern luxury feel to your Tesla while maintaining an OEM-style appearance. Control colors, brightness, and effects directly from your smartphone. • Powered by Tesla's 12V system\n• Turns on and off automatically with the vehicle\n• Negligible battery usage\n• Fully reversible installation\n• No permanent modifications required",
+          "included": "Perfect for adding a premium glow to the front cabin. What's Included\n• Dashboard Lighting\n• Front Door Lighting\n• Front Footwell Lighting\n• Smartphone App Control\n• Professional Mobile Installation"
+        },
+        {
+          "title": "Performance Kit",
+          "price": "389.00",
+          "sku": "ambient-lighting-3y-performance-kit",
+          "images": [
+            "/assets/img/products/ambient-lighting-3y-v2-1.webp",
+            "/assets/img/products/ambient-lighting-3y-v2-2.webp"
+          ],
+          "details": "Our premium custom designed ambient lighting brings a modern luxury feel to your Tesla while maintaining an OEM-style appearance. Control colors, brightness, and effects directly from your smartphone. • Powered by Tesla's 12V system\n• Turns on and off automatically with the vehicle\n• Negligible battery usage\n• Fully reversible installation\n• No permanent modifications required",
+          "included": "Extends ambient lighting throughout the entire cabin. What's Included\n• Everything in Standard, plus:\n• Rear Door Lighting (4 Doors Total)\n• Rear Footwell Lighting\n• Charging Pad Accent Strip\n• Smartphone App Control\n• Professional Mobile Installation"
+        },
+        {
+          "title": "Plaid Kit",
+          "price": "469.99",
+          "sku": "ambient-lighting-3y-plaid-kit",
+          "images": [
+            "/assets/img/tile-ambient-3y.webp",
+            "/assets/img/products/ambient-lighting-3y-v3-2.webp"
+          ],
+          "details": "Our premium custom designed ambient lighting brings a modern luxury feel to your Tesla while maintaining an OEM-style appearance. Control colors, brightness, and effects directly from your smartphone. • Powered by Tesla's 12V system\n• Turns on and off automatically with the vehicle\n• Negligible battery usage\n• Fully reversible installation\n• No permanent modifications required",
+          "included": "The ultimate ambient lighting package for a fully illuminated interior. What's Included\n• Everything in Performance, plus:\n• Full Center Console Lighting\n• 6-Month Warranty\n• Smartphone App Control\n• Professional Mobile Installation"
+        }
+      ]
+    },
+    {
+      "handle": "yoke-wheel-3y",
+      "title": "Yoke Steering Wheel",
+      "vendor": "Mobile EV Works",
+      "productType": "Yoke Steering Wheel",
+      "compatibleModels": [
+        "Model 3",
+        "Model Y"
+      ],
+      "tags": [
+        "Model 3",
+        "Model Y",
+        "mobile-install"
+      ],
+      "tileImage": "/assets/img/tile-yoke-3y.webp",
+      "seo": {
+        "title": "Tesla Model 3/Y Yoke Steering Wheel — Free Mobile Install | Mobile EV Works",
+        "description": "Yoke Steering Wheel for Tesla Model 3/Y, installed at your home or office anywhere in LA & SoCal. Free mobile install, 6-month warranty, 4.9★ rated. Available within 24 hours."
+      },
+      "includedFallback": "Every purchase includes everything needed for a complete, professional installation experience.",
+      "installInfo": "Free mobile installation by experienced professionals. Available 7 days a week — we install at your driveway or workplace for maximum convenience. Servicing all of SoCal.",
+      "warranty": "We take pride in every installation and stand behind our work. Our Mobile Warranty & Support commitment means we're available to assist if you ever need help after your install, providing convenient service and ongoing support long after the job is complete.",
+      "addon": {
+        "enabled": true,
+        "title": "Extended 1-year warranty",
+        "price": "59.99"
+      },
+      "variants": [
+        {
+          "title": "Standard Yoke Wheel - White",
+          "price": "389.00",
+          "sku": "yoke-wheel-3y-standard-yoke-wheel-white",
+          "images": [
+            "/assets/img/products/yoke-wheel-3y-v1-1.webp",
+            "/assets/img/products/yoke-wheel-3y-v1-2.webp",
+            "/assets/img/products/yoke-wheel-3y-v1-3.webp",
+            "/assets/img/products/yoke-wheel-3y-v1-4.webp"
+          ],
+          "details": "Transform your interior with a White Yoke Steering Wheel that perfectly complements Tesla's white interior option. Featuring OEM-style construction and a premium finish, it's the perfect upgrade for a cleaner, more luxurious cabin.",
+          "included": "What's Included • White Standard Yoke Steering Wheel • Professional Mobile Installation • Transfer of Factory Controls & Airbag • 6-Month Warranty • Lifetime EV Works Support"
+        },
+        {
+          "title": "Standard Yoke Wheel - Black",
+          "price": "389.00",
+          "sku": "yoke-wheel-3y-standard-yoke-wheel-black",
+          "images": [
+            "/assets/img/products/yoke-wheel-3y-v2-1.webp",
+            "/assets/img/products/yoke-wheel-3y-v2-2.webp",
+            "/assets/img/products/yoke-wheel-3y-v2-3.webp",
+            "/assets/img/products/yoke-wheel-3y-v2-4.webp"
+          ],
+          "details": "Upgrade your Tesla with a sleek OEM-style Yoke Steering Wheel finished in black leather. Designed to modernize your driving experience while maintaining factory functionality, this yoke delivers a clean, sporty look with a comfortable grip and professional installation included.",
+          "included": "What's Included • Black Standard Yoke Steering Wheel • Professional Mobile Installation • Transfer of Factory Controls & Airbag • 6-Month Warranty • Lifetime EV Works Support"
+        },
+        {
+          "title": "Carbon Fiber Yoke Wheel - White",
+          "price": "489.00",
+          "sku": "yoke-wheel-3y-carbon-fiber-yoke-wheel-white",
+          "images": [
+            "/assets/img/products/yoke-wheel-3y-v3-1.webp",
+            "/assets/img/products/yoke-wheel-3y-v3-2.webp",
+            "/assets/img/products/yoke-wheel-3y-v3-3.webp",
+            "/assets/img/products/yoke-wheel-3y-v3-4.webp"
+          ],
+          "details": "Take your Tesla's interior to the next level with our Carbon Fiber Yoke Steering Wheel. Featuring real carbon fiber accents and premium leather finishes, this upgrade delivers a performance-inspired look while retaining factory functionality and comfort.",
+          "included": "Carbon Fiber White – What's Included • Carbon Fiber Yoke with White Leather • Professional Mobile Installation • Transfer of Factory Controls & Airbag • 1-Year Warranty • Lifetime EV Works Support"
+        },
+        {
+          "title": "Carbon Fiber Yoke Wheel - Black",
+          "price": "489.00",
+          "sku": "yoke-wheel-3y-carbon-fiber-yoke-wheel-black",
+          "images": [
+            "/assets/img/products/yoke-wheel-3y-v4-1.webp",
+            "/assets/img/products/yoke-wheel-3y-v4-2.webp",
+            "/assets/img/products/yoke-wheel-3y-v4-3.webp",
+            "/assets/img/products/yoke-wheel-3y-v4-4.webp"
+          ],
+          "details": "Take your Tesla's interior to the next level with our Carbon Fiber Yoke Steering Wheel. Featuring real carbon fiber accents and premium leather finishes, this upgrade delivers a performance-inspired look while retaining factory functionality and comfort.",
+          "included": "Carbon Fiber Black – What's Included • Carbon Fiber Yoke with Black Leather • Professional Mobile Installation • Transfer of Factory Controls & Airbag • 1-Year Warranty • Lifetime EV Works Support"
+        }
+      ]
+    },
+    {
+      "handle": "rear-touchscreen-display",
+      "title": "Rear Touchscreen Display",
+      "vendor": "Mobile EV Works",
+      "productType": "Rear Touchscreen Display",
+      "compatibleModels": [
+        "Model 3",
+        "Model Y"
+      ],
+      "tags": [
+        "Model 3",
+        "Model Y",
+        "mobile-install"
+      ],
+      "tileImage": "/assets/img/tile-rear-touchscreen.webp",
+      "seo": {
+        "title": "Tesla Model 3/Y Rear Touchscreen Display — Free Mobile Install | Mobile EV Works",
+        "description": "Rear Touchscreen Display for Tesla Model 3/Y, installed at your home or office anywhere in LA & SoCal. Free mobile install, 6-month warranty, 4.9★ rated. Available within 24 hours."
+      },
+      "includedFallback": "Every purchase includes everything needed for a complete, professional installation experience.",
+      "installInfo": "Free mobile installation by experienced professionals. Available 7 days a week — we install at your driveway or workplace for maximum convenience. Servicing all of SoCal.",
+      "warranty": "We take pride in every installation and stand behind our work. Our Mobile Warranty & Support commitment means we're available to assist if you ever need help after your install, providing convenient service and ongoing support long after the job is complete.",
+      "addon": {
+        "enabled": true,
+        "title": "Extended 1-year warranty",
+        "price": "59.99"
+      },
+      "variants": [
+        {
+          "title": "Rear Touch Screen Display",
+          "price": "484.99",
+          "sku": "rear-touchscreen-display-rear-touch-screen-display",
+          "images": [
+            "/assets/img/tile-rear-touchscreen.webp",
+            "/assets/img/products/rear-touchscreen-display-v1-2.webp",
+            "/assets/img/products/rear-touchscreen-display-v1-3.webp",
+            "/assets/img/products/rear-touchscreen-display-v1-4.webp"
+          ],
+          "details": "Tesla Rear Display • Rear Climate Control\n• Heated Seat Controls\n• Volume & Media Controls\n• Movies & Video Streaming\n• Built-In Games\n• Responsive Touchscreen Interface\n• Factory-Style OEM Appearance Give rear passengers full control over comfort and entertainment with a sleek touchscreen seamlessly integrated into your Tesla's center console.",
+          "included": "Tesla Rear Display • Rear Climate Control\n• Heated Seat Controls\n• Volume & Media Controls\n• Movies & Video Streaming\n• Built-In Games\n• Responsive Touchscreen Interface\n• Factory-Style OEM Appearance Give rear passengers full control over comfort and entertainment with a sleek touchscreen seamlessly integrated into your Tesla's center console."
+        }
+      ]
+    },
+    {
+      "handle": "puddle-lights",
+      "title": "Puddle Lights",
+      "vendor": "Mobile EV Works",
+      "productType": "Puddle Lights",
+      "compatibleModels": [
+        "Model 3",
+        "Model Y"
+      ],
+      "tags": [
+        "Model 3",
+        "Model Y",
+        "mobile-install"
+      ],
+      "tileImage": "/assets/img/tile-puddle-lights.webp",
+      "seo": {
+        "title": "Tesla Model 3/Y Puddle Lights — Free Mobile Install | Mobile EV Works",
+        "description": "Puddle Lights for Tesla Model 3/Y, installed at your home or office anywhere in LA & SoCal. Free mobile install, 6-month warranty, 4.9★ rated. Available within 24 hours."
+      },
+      "includedFallback": "Every purchase includes everything needed for a complete, professional installation experience.",
+      "installInfo": "Free mobile installation by experienced professionals. Available 7 days a week — we install at your driveway or workplace for maximum convenience. Servicing all of SoCal.",
+      "warranty": "We take pride in every installation and stand behind our work. Our Mobile Warranty & Support commitment means we're available to assist if you ever need help after your install, providing convenient service and ongoing support long after the job is complete.",
+      "addon": {
+        "enabled": true,
+        "title": "Extended 1-year warranty",
+        "price": "59.99"
+      },
+      "variants": [
+        {
+          "title": "Tesla Logo",
+          "price": "78.99",
+          "sku": "puddle-lights-tesla-logo",
+          "images": [
+            "/assets/img/tile-puddle-lights.webp",
+            "/assets/img/products/puddle-lights-v1-2.webp"
+          ],
+          "details": "Add a premium touch to your Tesla with LED Projection Lights. These plug-and-play door lights project a crisp Tesla logo onto the ground whenever the door opens, creating a clean OEM-style look with a quick, reversible installation. Keep your factory lights ",
+          "included": "What's Included • LED Tesla Projection Light Set • Professional Mobile Installation • Keep Your Original Factory Lights • 6-Month Warranty & Lifetime EV Works Support"
+        },
+        {
+          "title": "Performance Badge",
+          "price": "98.99",
+          "sku": "puddle-lights-performance-badge",
+          "images": [
+            "/assets/img/products/puddle-lights-v2-1.webp",
+            "/assets/img/products/puddle-lights-v1-2.webp"
+          ],
+          "details": "Give your Tesla a sportier, factory-inspired look with a Performance Badge upgrade. Precision-fit and professionally installed, this subtle exterior enhancement adds a clean, premium appearance while maintaining an OEM-style finish.",
+          "included": "• Performance Badge • Professional Mobile Installation • OEM Badge Removal (if applicable) • 6-Month Warranty & Lifetime EV Works Support"
+        }
+      ]
+    },
+    {
+      "handle": "vehicle-maintenance",
+      "title": "Vehicle Maintenance",
+      "vendor": "Mobile EV Works",
+      "productType": "Vehicle Maintenance",
+      "compatibleModels": [
+        "Model 3",
+        "Model Y"
+      ],
+      "tags": [
+        "Model 3",
+        "Model Y",
+        "mobile-install"
+      ],
+      "tileImage": "/assets/img/tile-maintenance-3y.webp",
+      "seo": {
+        "title": "Tesla Model 3/Y Vehicle Maintenance — Free Mobile Install | Mobile EV Works",
+        "description": "Vehicle Maintenance for Tesla Model 3/Y, serviced at your home or office anywhere in LA & SoCal. Free mobile install, 6-month warranty, 4.9★ rated. Available within 24 hours."
+      },
+      "includedFallback": "Every purchase includes everything needed for a complete, professional installation experience.",
+      "installInfo": "Free mobile installation by experienced professionals. Available 7 days a week — we install at your driveway or workplace for maximum convenience. Servicing all of SoCal.",
+      "warranty": "We take pride in every installation and stand behind our work. Our Mobile Warranty & Support commitment means we're available to assist if you ever need help after your install, providing convenient service and ongoing support long after the job is complete.",
+      "addon": {
+        "enabled": true,
+        "title": "Extended 1-year warranty",
+        "price": "59.99"
+      },
+      "variants": [
+        {
+          "title": "Cabin Air Filter",
+          "price": "59.99",
+          "sku": "vehicle-maintenance-cabin-air-filter",
+          "images": [
+            "/assets/img/tile-maintenance-3y.webp"
+          ],
+          "details": "Keep your Tesla’s cabin air clean and fresh with a premium replacement cabin air filter. Designed to capture dust, pollen, and airborne contaminants while maintaining proper airflow through your vehicle's HVAC system.",
+          "included": "Premium cabin air filter set Professional mobile installation Disposal of old filters Installation warranty"
+        },
+        {
+          "title": "Windshield Wiper Replacement",
+          "price": "59.99",
+          "sku": "vehicle-maintenance-windshield-wiper-replacement",
+          "images": [
+            "/assets/img/products/vehicle-maintenance-v2-1.webp"
+          ],
+          "details": "Restore clear visibility in all weather conditions with new premium windshield wiper blades. Engineered for smooth, streak-free performance and a quiet wiping experience.",
+          "included": "Front windshield wiper blade set Professional mobile installation Wiper performance check Installation warranty"
+        },
+        {
+          "title": "HEPA Filter Cleaning",
+          "price": "149.99",
+          "sku": "vehicle-maintenance-hepa-filter-cleaning",
+          "images": [
+            "/assets/img/products/vehicle-maintenance-v3-1.webp"
+          ],
+          "details": "Upgrade your Tesla’s air filtration system with a HEPA filter designed to trap fine particles, allergens, and pollutants. Enjoy cleaner cabin air and improved filtration performance during everyday driving.",
+          "included": "HEPA air filter Professional mobile installation System inspection Installation warranty"
+        }
+      ]
+    },
+    {
+      "handle": "auto-frunk",
+      "title": "Auto Frunk",
+      "vendor": "Mobile EV Works",
+      "productType": "Auto Frunk",
+      "compatibleModels": [
+        "Model 3",
+        "Model Y"
+      ],
+      "tags": [
+        "Model 3",
+        "Model Y",
+        "mobile-install"
+      ],
+      "tileImage": "/assets/img/tile-auto-frunk.webp",
+      "seo": {
+        "title": "Tesla Model 3/Y Auto Frunk — Free Mobile Install | Mobile EV Works",
+        "description": "Auto Frunk for Tesla Model 3/Y, installed at your home or office anywhere in LA & SoCal. Free mobile install, 6-month warranty, 4.9★ rated. Available within 24 hours."
+      },
+      "includedFallback": "Every purchase includes everything needed for a complete, professional installation experience.",
+      "installInfo": "Free mobile installation by experienced professionals. Available 7 days a week — we install at your driveway or workplace for maximum convenience. Servicing all of SoCal.",
+      "warranty": "We take pride in every installation and stand behind our work. Our Mobile Warranty & Support commitment means we're available to assist if you ever need help after your install, providing convenient service and ongoing support long after the job is complete.",
+      "addon": {
+        "enabled": true,
+        "title": "Extended 1-year warranty",
+        "price": "59.99"
+      },
+      "variants": [
+        {
+          "title": "Automatic Frunk",
+          "price": "549.99",
+          "sku": "auto-frunk-automatic-frunk",
+          "images": [
+            "/assets/img/products/auto-frunk-v1-1.webp",
+            "/assets/img/products/auto-frunk-v1-2.webp",
+            "/assets/img/tile-auto-frunk.webp"
+          ],
+          "details": "Upgrade your Tesla with hands-free convenience. The Auto Frunk system allows you to open and close your front trunk with the push of a button from the touchscreen, key card, Tesla app, or frunk button. Designed for seamless OEM-style operation with a clean, fully reversible installation. ",
+          "included": "Auto Frunk Power Lift Kit Electronic Struts & Control Module Wiring Harness Professional Mobile Installation 6-Month Workmanship Warranty & Lifetime Mobile Support"
+        }
+      ]
+    },
+    {
+      "handle": "heads-up-display-touchscreen",
+      "title": "Heads Up Display Touchscreen",
+      "vendor": "Mobile EV Works",
+      "productType": "Heads Up Display Touchscreen",
+      "compatibleModels": [
+        "Model 3",
+        "Model Y"
+      ],
+      "tags": [
+        "Model 3",
+        "Model Y",
+        "mobile-install"
+      ],
+      "tileImage": "/assets/img/tile-hud.webp",
+      "seo": {
+        "title": "Tesla Model 3/Y Heads Up Display Touchscreen — Free Mobile Install | Mobile EV Works",
+        "description": "Heads Up Display Touchscreen for Tesla Model 3/Y, installed at your home or office anywhere in LA & SoCal. Free mobile install, 6-month warranty, 4.9★ rated. Available within 24 hours."
+      },
+      "includedFallback": "Every purchase includes everything needed for a complete, professional installation experience.",
+      "installInfo": "Free mobile installation by experienced professionals. Available 7 days a week — we install at your driveway or workplace for maximum convenience. Servicing all of SoCal.",
+      "warranty": "We take pride in every installation and stand behind our work. Our Mobile Warranty & Support commitment means we're available to assist if you ever need help after your install, providing convenient service and ongoing support long after the job is complete.",
+      "addon": {
+        "enabled": true,
+        "title": "Extended 1-year warranty",
+        "price": "59.99"
+      },
+      "variants": [
+        {
+          "title": "Heads Up Display Touchscreen",
+          "price": "479.00",
+          "sku": "heads-up-display-touchscreen-heads-up-display-touchscreen",
+          "images": [
+            "/assets/img/products/heads-up-display-touchscreen-v1-1.webp",
+            "/assets/img/products/heads-up-display-touchscreen-v1-3.webp"
+          ],
+          "details": "Touch screen",
+          "included": ""
+        }
+      ]
+    },
+    {
+      "handle": "screen-rotating-bracket",
+      "title": "Screen Rotating Bracket",
+      "vendor": "Mobile EV Works",
+      "productType": "Screen Rotating Bracket",
+      "compatibleModels": [
+        "Model 3",
+        "Model Y"
+      ],
+      "tags": [
+        "Model 3",
+        "Model Y",
+        "mobile-install"
+      ],
+      "tileImage": "/assets/img/tile-screen-bracket.webp",
+      "seo": {
+        "title": "Tesla Model 3/Y Screen Rotating Bracket — Free Mobile Install | Mobile EV Works",
+        "description": "Screen Rotating Bracket for Tesla Model 3/Y, installed at your home or office anywhere in LA & SoCal. Free mobile install, 6-month warranty, 4.9★ rated. Available within 24 hours."
+      },
+      "includedFallback": "Every purchase includes everything needed for a complete, professional installation experience.",
+      "installInfo": "Free mobile installation by experienced professionals. Available 7 days a week — we install at your driveway or workplace for maximum convenience. Servicing all of SoCal.",
+      "warranty": "We take pride in every installation and stand behind our work. Our Mobile Warranty & Support commitment means we're available to assist if you ever need help after your install, providing convenient service and ongoing support long after the job is complete.",
+      "addon": {
+        "enabled": true,
+        "title": "Extended 1-year warranty",
+        "price": "59.99"
+      },
+      "variants": [
+        {
+          "title": "Screen Rotating Bracket",
+          "price": "178.99",
+          "sku": "screen-rotating-bracket-screen-rotating-bracket",
+          "images": [
+            "/assets/img/tile-screen-bracket.webp",
+            "/assets/img/products/screen-rotating-bracket-v1-2.webp",
+            "/assets/img/products/screen-rotating-bracket-v1-3.webp",
+            "/assets/img/products/screen-rotating-bracket-v1-4.webp"
+          ],
+          "details": "Enhance your driving experience with a screen rotating bracket that allows your Tesla’s display to swivel toward the driver or passenger for improved visibility and convenience. Maintains a factory-style appearance while adding greater comfort and accessibility.",
+          "included": "Screen rotating bracket Professional mobile installation Display alignment and function check Installation warranty"
+        }
+      ]
+    },
+    {
+      "handle": "ambient-lighting-sx",
+      "title": "Ambient Lighting",
+      "vendor": "Mobile EV Works",
+      "productType": "Ambient Lighting",
+      "compatibleModels": [
+        "Model S",
+        "Model X"
+      ],
+      "tags": [
+        "Model S",
+        "Model X",
+        "mobile-install"
+      ],
+      "tileImage": "/assets/img/tile-ambient-sx.webp",
+      "seo": {
+        "title": "Tesla Model S/X Ambient Lighting — Free Mobile Install | Mobile EV Works",
+        "description": "Ambient Lighting for Tesla Model S/X, installed at your home or office anywhere in LA & SoCal. Free mobile install, 6-month warranty, 4.9★ rated. Available within 24 hours."
+      },
+      "includedFallback": "Every purchase includes everything needed for a complete, professional installation experience.",
+      "installInfo": "Free mobile installation by experienced professionals. Available 7 days a week — we install at your driveway or workplace for maximum convenience. Servicing all of SoCal.",
+      "warranty": "We take pride in every installation and stand behind our work. Our Mobile Warranty & Support commitment means we're available to assist if you ever need help after your install, providing convenient service and ongoing support long after the job is complete.",
+      "addon": {
+        "enabled": true,
+        "title": "Extended 1-year warranty",
+        "price": "59.99"
+      },
+      "variants": [
+        {
+          "title": "Standard Kit",
+          "price": "449.99",
+          "sku": "ambient-lighting-sx-standard-kit",
+          "images": [
+            "/assets/img/products/ambient-lighting-sx-v1-1.webp",
+            "/assets/img/products/ambient-lighting-3y-v1-2.webp"
+          ],
+          "details": "Our premium custom designed ambient lighting brings a modern luxury feel to your Tesla while maintaining an OEM-style appearance. Control colors, brightness, and effects directly from your smartphone. • Powered by Tesla's 12V system\n• Turns on and off automatically with the vehicle\n• Negligible battery usage\n• Fully reversible installation\n• No permanent modifications required",
+          "included": "Perfect for adding a premium glow to the front cabin. What's Included\n• Dashboard Lighting\n• Front Door Lighting\n• Front Footwell Lighting\n• Smartphone App Control\n• Professional Mobile Installation"
+        },
+        {
+          "title": "Performance Kit",
+          "price": "549.99",
+          "sku": "ambient-lighting-sx-performance-kit",
+          "images": [
+            "/assets/img/products/ambient-lighting-sx-v2-1.webp",
+            "/assets/img/products/ambient-lighting-3y-v2-2.webp"
+          ],
+          "details": "Our premium custom designed ambient lighting brings a modern luxury feel to your Tesla while maintaining an OEM-style appearance. Control colors, brightness, and effects directly from your smartphone. • Powered by Tesla's 12V system\n• Turns on and off automatically with the vehicle\n• Negligible battery usage\n• Fully reversible installation\n• No permanent modifications required",
+          "included": "Extends ambient lighting throughout the entire cabin. What's Included\n• Everything in Standard, plus:\n• Rear Door Lighting (4 Doors Total)\n• Rear Footwell Lighting\n• Charging Pad Accent Strip\n• Smartphone App Control\n• Professional Mobile Installation"
+        },
+        {
+          "title": "Plaid Kit",
+          "price": "669.99",
+          "sku": "ambient-lighting-sx-plaid-kit",
+          "images": [
+            "/assets/img/tile-ambient-sx.webp",
+            "/assets/img/products/ambient-lighting-3y-v3-2.webp"
+          ],
+          "details": "Our premium custom designed ambient lighting brings a modern luxury feel to your Tesla while maintaining an OEM-style appearance. Control colors, brightness, and effects directly from your smartphone. • Powered by Tesla's 12V system\n• Turns on and off automatically with the vehicle\n• Negligible battery usage\n• Fully reversible installation\n• No permanent modifications required",
+          "included": "The ultimate ambient lighting package for a fully illuminated interior. What's Included\n• Everything in Performance, plus:\n• Full Center Console Lighting\n• 6-Month Warranty\n• Smartphone App Control\n• Professional Mobile Installation"
+        }
+      ]
+    },
+    {
+      "handle": "yoke-wheel-sx",
+      "title": "Yoke Steering Wheel",
+      "vendor": "Mobile EV Works",
+      "productType": "Yoke Steering Wheel",
+      "compatibleModels": [
+        "Model S",
+        "Model X"
+      ],
+      "tags": [
+        "Model S",
+        "Model X",
+        "mobile-install"
+      ],
+      "tileImage": "/assets/img/tile-yoke-sx.webp",
+      "seo": {
+        "title": "Tesla Model S/X Yoke Steering Wheel — Free Mobile Install | Mobile EV Works",
+        "description": "Yoke Steering Wheel for Tesla Model S/X, installed at your home or office anywhere in LA & SoCal. Free mobile install, 6-month warranty, 4.9★ rated. Available within 24 hours."
+      },
+      "includedFallback": "Every purchase includes everything needed for a complete, professional installation experience.",
+      "installInfo": "Free mobile installation by experienced professionals. Available 7 days a week — we install at your driveway or workplace for maximum convenience. Servicing all of SoCal.",
+      "warranty": "We take pride in every installation and stand behind our work. Our Mobile Warranty & Support commitment means we're available to assist if you ever need help after your install, providing convenient service and ongoing support long after the job is complete.",
+      "addon": {
+        "enabled": true,
+        "title": "Extended 1-year warranty",
+        "price": "59.99"
+      },
+      "variants": [
+        {
+          "title": "Premium Black Yoke",
+          "price": "489.00",
+          "sku": "yoke-wheel-sx-premium-black-yoke",
+          "images": [
+            "/assets/img/products/yoke-wheel-sx-v1-1.webp",
+            "/assets/img/products/yoke-wheel-sx-v1-2.webp"
+          ],
+          "details": "Transform your interior with a White Yoke Steering Wheel that perfectly complements Tesla's white interior option. Featuring OEM-style construction and a premium finish, it's the perfect upgrade for a cleaner, more luxurious cabin.",
+          "included": "What's Included • Black Standard Yoke Steering Wheel • Professional Mobile Installation • Transfer of Factory Controls & Airbag • 6-Month Warranty • Lifetime EV Works Support"
+        },
+        {
+          "title": "Premium White Yoke",
+          "price": "489.00",
+          "sku": "yoke-wheel-sx-premium-white-yoke",
+          "images": [
+            "/assets/img/tile-yoke-sx.webp",
+            "/assets/img/products/yoke-wheel-sx-v2-2.webp"
+          ],
+          "details": "Transform your interior with a White Yoke Steering Wheel that perfectly complements Tesla's white interior option. Featuring OEM-style construction and a premium finish, it's the perfect upgrade for a cleaner, more luxurious cabin.",
+          "included": "What's Included • White Standard Yoke Steering Wheel • Professional Mobile Installation • Transfer of Factory Controls & Airbag • 6-Month Warranty • Lifetime EV Works Support"
+        }
+      ]
+    },
+    {
+      "handle": "vehicle-maintenance-sx",
+      "title": "Vehicle Maintenance",
+      "vendor": "Mobile EV Works",
+      "productType": "Vehicle Maintenance",
+      "compatibleModels": [
+        "Model S",
+        "Model X"
+      ],
+      "tags": [
+        "Model S",
+        "Model X",
+        "mobile-install"
+      ],
+      "tileImage": "/assets/img/tile-maintenance-sx.webp",
+      "seo": {
+        "title": "Tesla Model S/X Vehicle Maintenance — Free Mobile Install | Mobile EV Works",
+        "description": "Vehicle Maintenance for Tesla Model S/X, serviced at your home or office anywhere in LA & SoCal. Free mobile install, 6-month warranty, 4.9★ rated. Available within 24 hours."
+      },
+      "includedFallback": "Every purchase includes everything needed for a complete, professional installation experience.",
+      "installInfo": "Free mobile installation by experienced professionals. Available 7 days a week — we install at your driveway or workplace for maximum convenience. Servicing all of SoCal.",
+      "warranty": "We take pride in every installation and stand behind our work. Our Mobile Warranty & Support commitment means we're available to assist if you ever need help after your install, providing convenient service and ongoing support long after the job is complete.",
+      "addon": {
+        "enabled": true,
+        "title": "Extended 1-year warranty",
+        "price": "59.99"
+      },
+      "variants": [
+        {
+          "title": "Cabin Air Filter",
+          "price": "79.99",
+          "sku": "vehicle-maintenance-sx-cabin-air-filter",
+          "images": [
+            "/assets/img/products/vehicle-maintenance-sx-v1-1.webp"
+          ],
+          "details": "Keep your Tesla’s cabin air clean and fresh with a premium replacement cabin air filter. Designed to capture dust, pollen, and airborne contaminants while maintaining proper airflow through your vehicle's HVAC system.",
+          "included": "Premium cabin air filter set Professional mobile installation Disposal of old filters Installation warranty"
+        },
+        {
+          "title": "Windshield Wiper Replacement",
+          "price": "69.99",
+          "sku": "vehicle-maintenance-sx-windshield-wiper-replacement",
+          "images": [
+            "/assets/img/products/vehicle-maintenance-v2-1.webp"
+          ],
+          "details": "Restore clear visibility in all weather conditions with new premium windshield wiper blades. Engineered for smooth, streak-free performance and a quiet wiping experience.",
+          "included": "Front windshield wiper blade set Professional mobile installation Wiper performance check Installation warranty"
+        },
+        {
+          "title": "HEPA Filter Cleaning",
+          "price": "189.99",
+          "sku": "vehicle-maintenance-sx-hepa-filter-cleaning",
+          "images": [
+            "/assets/img/products/vehicle-maintenance-v3-1.webp"
+          ],
+          "details": "Upgrade your Tesla’s air filtration system with a HEPA filter designed to trap fine particles, allergens, and pollutants. Enjoy cleaner cabin air and improved filtration performance during everyday driving.",
+          "included": "HEPA air filter Professional mobile installation System inspection Installation warranty"
+        }
+      ]
+    }
+  ]
+}

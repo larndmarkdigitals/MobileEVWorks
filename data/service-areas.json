@@ -1,0 +1,61 @@
+{
+  "_note": "Local search pages. Each city gets its own page at /service-areas/<slug>. Delete a city you don't serve, or copy one to add a new city, then rebuild.",
+  "hub": {
+    "title": "Tesla Mobile Install Service Areas — LA & SoCal | Mobile EV Works",
+    "description": "Mobile EV Works installs Tesla ambient lighting, yoke steering wheels, rear touchscreens and more at your home or office across Los Angeles and Southern California.",
+    "heading": "Where we install",
+    "intro": "We're a mobile Tesla install crew based in Santa Monica. We drive to you across Los Angeles and Southern California — your driveway, your office lot or your building's parking garage. Pick your city below, or just book and tell us where you are."
+  },
+  "featured": ["ambient-lighting-3y", "yoke-wheel-3y", "rear-touchscreen-display", "puddle-lights", "auto-frunk", "ambient-lighting-sx"],
+  "cities": [
+    {
+      "slug": "santa-monica",
+      "name": "Santa Monica",
+      "intro": "Santa Monica is home base for Mobile EV Works, so it's one of the easiest places for us to get to. We install ambient lighting, yoke steering wheels, puddle lights and more right where your Tesla is parked — at home, at work, or in your building's garage — and most installs are done in under 3 hours.",
+      "where": "We regularly work in residential driveways and apartment garages around Ocean Park, Sunset Park and the Montana Avenue area, and in office lots and parking structures downtown and along Wilshire and Olympic. If your building has rules about outside contractors, tell us when you book and we'll plan around them.",
+      "nearby": ["los-angeles", "beverly-hills", "torrance"]
+    },
+    {
+      "slug": "los-angeles",
+      "name": "Los Angeles",
+      "intro": "Getting a Tesla upgrade in Los Angeles usually means a drive across town and a morning in a waiting room. We skip that. Our Tesla-only crew comes to you anywhere in LA with everything needed for the install, and you get your day back.",
+      "where": "From the Westside and Westwood to Downtown, Silver Lake, the Valley and beyond, we install in home driveways, apartment and condo garages, and office parking structures. All we need is a safe spot with room to open the doors and work around the car.",
+      "nearby": ["santa-monica", "beverly-hills", "pasadena"]
+    },
+    {
+      "slug": "beverly-hills",
+      "name": "Beverly Hills",
+      "intro": "We bring premium Tesla upgrades to Beverly Hills without the trip to a shop. Ambient lighting, carbon fiber yoke wheels, rear touchscreens and auto frunks are installed with a factory-style finish, so the result looks like it left the factory that way.",
+      "where": "We work in home driveways, private garages and the underground parking at offices and residential buildings around Beverly Hills and Century City. Book a time that suits you and we'll meet you where the car is.",
+      "nearby": ["los-angeles", "santa-monica", "pasadena"]
+    },
+    {
+      "slug": "pasadena",
+      "name": "Pasadena",
+      "intro": "Pasadena Tesla owners can book ambient lighting, a yoke steering wheel, puddle lights and more without leaving the house. We drive out, do a clean and fully reversible install, and walk you through how everything works before we leave.",
+      "where": "We install at homes across Pasadena, Altadena and South Pasadena, and at office lots and parking structures around Old Pasadena and the Playhouse District. Street parking works too, as long as there's room to work safely around the car.",
+      "nearby": ["los-angeles", "beverly-hills", "long-beach"]
+    },
+    {
+      "slug": "long-beach",
+      "name": "Long Beach",
+      "intro": "We bring the shop to Long Beach. Whether you drive a Model 3, Model Y, Model S or Model X, our crew installs your upgrade on site — no drop-off, no rideshare home, no waiting around.",
+      "where": "We work in driveways and garages around Belmont Shore, Bixby Knolls, Naples and the rest of Long Beach, plus office lots and parking structures downtown. Tell us the address when you book and we'll take care of the rest.",
+      "nearby": ["torrance", "irvine", "los-angeles"]
+    },
+    {
+      "slug": "torrance",
+      "name": "Torrance",
+      "intro": "Torrance and South Bay Tesla owners can get ambient lighting, a yoke steering wheel, a screen rotating bracket and more installed without leaving home. Every install is backed by our 6-month workmanship warranty.",
+      "where": "We install at homes and condo garages across Torrance, Redondo Beach and the rest of the South Bay, and at workplace parking lots during the day. All we need is a flat spot and enough room to work around the car.",
+      "nearby": ["long-beach", "santa-monica", "los-angeles"]
+    },
+    {
+      "slug": "irvine",
+      "name": "Irvine",
+      "intro": "We serve Irvine and Orange County with the same mobile install we do across LA. Book your upgrade, tell us where the car will be, and our Tesla-specialist crew shows up with everything needed for a clean, factory-style install.",
+      "where": "We work in home driveways and community garages across Irvine's villages, and at office parks and parking structures around the Spectrum and the Irvine Business Complex — a good option if you'd like the install done while you're at work.",
+      "nearby": ["long-beach", "torrance", "los-angeles"]
+    }
+  ]
+}

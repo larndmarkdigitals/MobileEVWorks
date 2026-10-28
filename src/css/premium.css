@@ -1,0 +1,119 @@
+/* =========================================================
+   Premium layer — larger, quieter type, key-number strips,
+   wide photos. Sits on top of site.css (same font, spacing
+   and corners) and comes in two colour sets:
+
+   .theme-light  white page, light grey panels, blue buttons
+                 (the home page; matches the rest of the site)
+   .theme-dark   near-black night-time palette
+                 (the Performance Kit page, and dark panels
+                 dropped into a light page)
+   ========================================================= */
+
+.theme-light, .theme-dark {
+  --k-section: clamp(96px, 11vw, 168px);
+  --k-h1: clamp(46px, 6.6vw, 104px);
+  --k-h2: clamp(32px, 3.3vw, 52px);
+  --k-lead: clamp(18px, 0.35vw + 16.6px, 21px);
+  background: var(--k-bg);
+  color: var(--k-ink);
+}
+.theme-light {
+  --k-bg: #fff;
+  --k-surface: var(--field);
+  --k-surface-2: var(--field-2);
+  --k-ink: var(--ink);
+  --k-muted: var(--muted);
+  --k-btn: var(--blue);
+  --k-btn-hover: var(--blue-hover);
+  --k-btn-ink: #fff;
+  --k-btn2: var(--field);
+  --k-btn2-hover: var(--field-2);
+  --k-btn2-ink: var(--ink);
+}
+.theme-dark {
+  --k-bg: #0a0a0b;
+  --k-surface: #141416;
+  --k-surface-2: #1c1c1f;
+  --k-ink: #f3f3f0;
+  --k-muted: #a7a7ad;
+  --k-btn: var(--k-ink);
+  --k-btn-hover: #fff;
+  --k-btn-ink: var(--k-bg);
+  --k-btn2: rgba(255, 255, 255, .1);
+  --k-btn2-hover: rgba(255, 255, 255, .18);
+  --k-btn2-ink: var(--k-ink);
+  --star: var(--k-ink);
+}
+.theme-dark ::selection { background: var(--k-ink); color: var(--k-bg); }
+.theme-dark :focus-visible { outline-color: var(--k-ink); }
+
+/* ---------- Header, menu and footer (dark pages only) ---------- */
+body.theme-dark .site-header { background: var(--k-bg); }
+body.theme-dark .logo img { filter: invert(1); }
+body.theme-dark .nav > a, body.theme-dark .nav > .nav-products > button { color: var(--k-ink); }
+body.theme-dark .nav > a:hover, body.theme-dark .nav > a[aria-current="page"], body.theme-dark .nav-products:hover > button,
+body.theme-dark .site-header.mega-open .nav-products > button { background: rgba(255, 255, 255, .1); }
+body.theme-dark .mega { background: var(--k-bg); }
+body.theme-dark .mega .model-card:hover { background: var(--k-surface); }
+body.theme-dark .mega .model-card h3 { color: var(--k-ink); }
+body.theme-dark .mega .model-links span { color: var(--k-muted); }
+body.theme-dark .mega .model-card:hover .model-links span { color: var(--k-ink); }
+body.theme-dark .menu-btn { background: var(--k-ink); color: var(--k-bg); }
+body.theme-dark .site-footer { background: var(--k-surface); }
+body.theme-dark .footer-title, body.theme-dark .footer-col b, body.theme-dark .footer-links a { color: var(--k-ink); }
+body.theme-dark .footer-col, body.theme-dark .footer-right, body.theme-dark .footer-legal { color: var(--k-muted); }
+body.theme-dark .footer-col a { color: inherit; }
+body.theme-dark .socials a { background: #2a2a2e; }
+body.theme-dark .socials a:hover { background: var(--k-ink); }
+body.theme-dark .socials a:hover img { filter: invert(1); }
+
+/* ---------- Type ---------- */
+.theme-light h1, .theme-dark h1, .k-h2 { color: var(--k-ink); font-weight: 600; letter-spacing: -0.045em; }
+.k-h2 { font-size: var(--k-h2); line-height: 1.04; text-wrap: balance; }
+.k-lead { font-size: var(--k-lead); line-height: 1.5; color: var(--k-muted); letter-spacing: -0.01em; text-wrap: pretty; }
+.k-note { font-size: var(--fs-small); color: var(--k-muted); }
+.k-note a { color: var(--k-ink); text-decoration: underline; text-underline-offset: 3px; }
+.k-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--k-ink); }
+.k-link .arrow { transition: transform .2s var(--ease); }
+.k-link:hover .arrow { transform: translateX(3px); }
+.kit-section, .k-section { margin-top: var(--k-section); }
+
+/* ---------- Buttons ---------- */
+.kbtn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  height: 56px; padding: 0 32px; border: 0; border-radius: var(--r-ctl);
+  font-size: 15px; font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; cursor: pointer;
+  transition: background-color .25s ease, color .25s ease, transform .15s ease, opacity .2s;
+}
+.kbtn:active { transform: scale(.98); }
+.kbtn-primary { background: var(--k-btn); color: var(--k-btn-ink); }
+.kbtn-primary:hover { background: var(--k-btn-hover); }
+.kbtn-secondary { background: var(--k-btn2); color: var(--k-btn2-ink); }
+.kbtn-secondary:hover { background: var(--k-btn2-hover); }
+.kbtn[disabled] { cursor: default; opacity: .55; transform: none; }
+.kbtn .arrow { transition: transform .2s var(--ease); }
+.kbtn:hover .arrow { transform: translateX(3px); }
+
+/* ---------- Photo recoloured to a light colour (--tint) ---------- */
+.glow-photo { position: absolute; inset: 0; background: #000; }
+.glow-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; filter: grayscale(1) contrast(1.18) brightness(1.04); }
+.glow-photo .tint { position: absolute; inset: 0; background: var(--tint); mix-blend-mode: color; transition: background-color .6s ease; }
+
+/* ---------- Key numbers strip ---------- */
+.k-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding-top: clamp(48px, 5vw, 72px); }
+.k-specs.k-specs-4 { grid-template-columns: repeat(4, 1fr); }
+.k-spec b { display: block; font-size: clamp(40px, 4.4vw, 68px); font-weight: 600; line-height: 1; letter-spacing: -0.045em; color: var(--k-ink); font-variant-numeric: tabular-nums; }
+.k-spec span { display: block; margin-top: 14px; font-size: var(--fs-body); font-weight: 600; color: var(--k-ink); }
+.k-spec small { display: block; margin-top: 2px; font-size: var(--fs-small); color: var(--k-muted); }
+
+@media (max-width: 1199.98px) {
+  .k-specs, .k-specs.k-specs-4 { grid-template-columns: 1fr; gap: 8px; }
+  .k-spec { padding: 22px 20px; border-radius: var(--r-card); background: var(--k-surface); }
+}
+@media (min-width: 600px) and (max-width: 1199.98px) {
+  .k-specs { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .k-specs.k-specs-4 { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .k-specs:not(.k-specs-4) .k-spec { padding: 0; background: none; }
+  .k-spec b { font-size: clamp(32px, 5vw, 48px); }
+}

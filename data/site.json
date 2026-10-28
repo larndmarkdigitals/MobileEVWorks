@@ -1,0 +1,486 @@
+{
+  "_note": "Business info and site-wide settings. Change a phone number or link here and rebuild — every page updates.",
+  "name": "Mobile EV Works",
+  "url": "https://mobileevworks.com",
+  "callBubblePhone": "+1 (949) 423-3631",
+  "callBubbleTel": "+19494233631",
+  "footerPhones": [
+    "+1 (949) 423-3631"
+  ],
+  "address": [
+    "1234 6th St",
+    "Santa Monica, CA 90401"
+  ],
+  "copyright": [
+    "© {year} by EV WORKS LLC",
+    "All rights reserved.",
+    "Unauthorized use, reproduction or distribution of any site content is prohibited."
+  ],
+  "instagram": "https://www.instagram.com/mobileevworks/",
+  "facebook": "https://www.facebook.com/MobileEVWorks",
+  "careersUrl": "https://docs.google.com/forms/d/e/1FAIpQLScugx6lGtDSSHs74xyenF8MvuLD_fTyI2uBVw0OrRRXuB9jmQ/viewform?usp=sharing&ouid=107761565372650993293",
+  "forms": {
+    "_note": "Booking requests and contact messages are emailed through Web3Forms (same keys the Framer site used). No payment is taken.",
+    "endpoint": "https://api.web3forms.com/submit",
+    "bookingKey": "adcf8fb7-d232-437a-99b4-e53dfad1e4ce",
+    "bookingCc": "art.thelen01@gmail.com",
+    "bookingSuccess": "Thanks! We'll call you soon to schedule your install.",
+    "contactKey": "419ce1cc-7015-425b-a688-8946fea08fe9",
+    "contactCc": "sebastianherger1001@gmail.com",
+    "contactSuccess": "Thanks! We'll be in touch within 24 hours."
+  },
+  "home": {
+    "_note": "Home page (dark theme). Text and photos for each section, top to bottom.",
+    "heroTitle": "Tesla upgrades, installed where you park.",
+    "heroSubtitle": "Free mobile installation across Los Angeles and Southern California.",
+    "heroImage": "/assets/img/carousel-ambient.webp",
+    "heroImageMobile": "/assets/img/carousel-ambient-mobile.webp",
+    "heroAlt": "Tesla Model 3 at night with its doors open and red ambient lighting across the cabin",
+    "specs": [
+      {
+        "value": 500,
+        "suffix": "+",
+        "label": "Tesla installs",
+        "note": "Across SoCal since 2023"
+      },
+      {
+        "value": 4.9,
+        "decimals": 1,
+        "label": "Rating on Yelp",
+        "note": "4.7 on Facebook"
+      },
+      {
+        "text": "Free",
+        "label": "Mobile installation",
+        "note": "At your home or office"
+      },
+      {
+        "text": "6 months",
+        "label": "Workmanship warranty",
+        "note": "On every install"
+      }
+    ],
+    "modelsTitle": "Choose your Tesla.",
+    "modelsLead": "Upgrades for Model S, Model 3, Model X and Model Y.",
+    "upgradesTitle": "Popular upgrades.",
+    "upgrades": [
+      {
+        "title": "Ambient Lighting",
+        "text": "Transform your interior with specialized ambient lighting.",
+        "image": "/assets/img/gallery-01.webp",
+        "alt": "Tesla cabin lit blue with ambient lighting",
+        "from": [
+          "ambient-lighting-3y",
+          "ambient-lighting-sx"
+        ],
+        "link": "/shop?category=ambient-lighting",
+        "linkLabel": "Shop ambient lighting"
+      },
+      {
+        "title": "Yoke Steering Wheel",
+        "text": "Transform your driving experience with a performance-inspired yoke design.",
+        "image": "/assets/img/carousel-yoke.webp",
+        "alt": "Yoke steering wheel installed in a Tesla",
+        "from": [
+          "yoke-wheel-3y",
+          "yoke-wheel-sx"
+        ],
+        "link": "/shop",
+        "linkLabel": "Shop yoke wheels"
+      },
+      {
+        "title": "Rear Touchscreen Display",
+        "text": "Rear climate, heated seats and media controls for the back row. Model 3 and Model Y.",
+        "image": "/assets/img/tile-rear-touchscreen.webp",
+        "alt": "Rear touchscreen display in a Tesla Model Y",
+        "from": [
+          "rear-touchscreen-display"
+        ],
+        "link": "/product-stack-flat/rear-touchscreen-display",
+        "linkLabel": "See the rear display"
+      },
+      {
+        "title": "Heads Up Display Touchscreen",
+        "text": "A compact touchscreen display that sits right behind the wheel. Model 3 and Model Y.",
+        "image": "/assets/img/tile-hud.webp",
+        "alt": "Heads up display touchscreen behind the steering wheel",
+        "from": [
+          "heads-up-display-touchscreen"
+        ],
+        "link": "/product-stack-flat/heads-up-display-touchscreen",
+        "linkLabel": "See the display"
+      },
+      {
+        "title": "Body Kits",
+        "text": "Coming soon: premium exterior styling upgrades for your Tesla.",
+        "image": "/assets/img/carousel-bodykits.webp",
+        "alt": "Tesla Model S on a desert road at sunset",
+        "link": "/contact?topic=Body%20kits",
+        "linkLabel": "Ask about body kits",
+        "soon": true
+      }
+    ],
+    "kitTitle": "Prefer to fit it yourself?",
+    "kitText": "The Performance Ambient Lighting Kit: ten lights for the dash, all four doors, the center console and footwells, with app and remote control. A reversible install in an afternoon.",
+    "howTitle": "How it works.",
+    "howLead": "No payment to book, and no waiting room.",
+    "how": [
+      {
+        "title": "Book your upgrade",
+        "text": "Pick your Tesla, your upgrade and the version you want, then send a booking request. No payment needed."
+      },
+      {
+        "title": "We call to confirm",
+        "text": "We'll call you to confirm a time and place, usually within 24 hours."
+      },
+      {
+        "title": "We install it where you park",
+        "text": "Our installers come to your driveway, office lot or parking garage with everything they need."
+      }
+    ],
+    "aboutTitle": "Built by EV enthusiasts, for EV owners.",
+    "aboutText": "EV Works started with a passion for electric vehicles and a vision to make EV upgrades more convenient. Founded by Tesla enthusiasts with backgrounds at Tesla, we bring professional installation directly to your home or workplace. No waiting rooms, no dealership hassle—just clean, convenient installs by people who understand EVs.",
+    "reviewsTitle": "What Tesla owners say.",
+    "ctaTitle": "Book your install.",
+    "ctaText": "No payment needed. We'll call you to confirm a time, usually within 24 hours."
+  },
+  "models": [
+    {
+      "name": "Model S",
+      "image": "/assets/img/model-s.png",
+      "collection": "tesla-model-s-x"
+    },
+    {
+      "name": "Model 3",
+      "image": "/assets/img/model-3.png",
+      "collection": "tesla-model-3y"
+    },
+    {
+      "name": "Model Y",
+      "image": "/assets/img/model-y-cut.png",
+      "collection": "tesla-model-3y"
+    },
+    {
+      "name": "Model X",
+      "image": "/assets/img/model-x.png",
+      "collection": "tesla-model-s-x"
+    }
+  ],
+  "collections": [
+    {
+      "handle": "tesla-model-3y",
+      "title": "Tesla Model 3/Y",
+      "seoTitle": "Tesla Model 3 & Model Y Upgrades in LA — Free Mobile Install | Mobile EV Works",
+      "seoDescription": "Ambient lighting, yoke steering wheels, rear touchscreens, auto frunk and more for Tesla Model 3 and Model Y — installed at your home or office across LA & SoCal. 6-month warranty, 4.9★ rated.",
+      "feature": {
+        "title": "Ambient Lighting",
+        "text": "New look with this amazing ambient lighting",
+        "image": "/assets/img/ambient-purple-yoke.webp",
+        "product": "ambient-lighting-3y"
+      },
+      "products": [
+        "yoke-wheel-3y",
+        "ambient-lighting-3y",
+        "rear-touchscreen-display",
+        "puddle-lights",
+        "vehicle-maintenance",
+        "auto-frunk",
+        "heads-up-display-touchscreen",
+        "screen-rotating-bracket"
+      ],
+      "lead": "",
+      "tilesTitle": "All Model 3 & Model Y upgrades"
+    },
+    {
+      "handle": "tesla-model-s-x",
+      "title": "Tesla Model S/X",
+      "seoTitle": "Tesla Model S & Model X Upgrades in LA — Free Mobile Install | Mobile EV Works",
+      "seoDescription": "Ambient lighting, yoke steering wheels and maintenance for Tesla Model S and Model X — done at your home or office across LA & SoCal. 6-month warranty, 4.9★ rated.",
+      "feature": {
+        "title": "Ambient Lighting",
+        "text": "New look with this amazing ambient lighting",
+        "image": "/assets/img/ambient-purple-yoke.webp",
+        "product": "ambient-lighting-sx"
+      },
+      "products": [
+        "yoke-wheel-sx",
+        "ambient-lighting-sx",
+        "vehicle-maintenance-sx"
+      ],
+      "lead": "",
+      "tilesTitle": "All Model S & Model X upgrades"
+    }
+  ],
+  "testimonials": {
+    "title": "Mobile convenience, premium results.",
+    "subtitle": "500+ Teslas customized across SoCal.",
+    "stats": [
+      {
+        "value": 500,
+        "suffix": "+",
+        "label": "Installs"
+      },
+      {
+        "value": 4.7,
+        "decimals": 1,
+        "label": "Facebook Rating"
+      },
+      {
+        "value": 4.9,
+        "decimals": 1,
+        "label": "Yelp Rating"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Jordan M.",
+        "initials": "JM",
+        "when": "2 weeks ago",
+        "rating": 5,
+        "verified": true,
+        "product": "Model 3 · Ambient Lighting",
+        "text": "Sebastian is amazing!!!!! Answered all my questions, was prompt, knowledgeable and adheres to quality over speed. This man would spend 30 mins just to get it looking right. Fixed every minute detail to make it perfect. He’s such a young entrepreneur hustling hard and giving the best customer service. Kudos to this man and best of luck. My model s plaid looks amazing!!!!",
+        "media": [
+          "/assets/video/review-jordan.mp4",
+          "/assets/img/review-jordan-1.webp",
+          "/assets/img/about-blue-cabin.webp",
+          "/assets/img/gallery-09.webp"
+        ]
+      },
+      {
+        "name": "Michael K",
+        "initials": "MK",
+        "when": "1 month ago",
+        "rating": 5,
+        "verified": true,
+        "product": "Model 3 · Ambient Lighting",
+        "text": "The LED lighting strip installation was quick and the product is perfect. Filipe was on time and has a great personality. He even remove my old LED strip. The result is looking sleek. 100% recommended.",
+        "media": [
+          "/assets/video/review-michael.mp4",
+          "/assets/img/review-michael-1.webp",
+          "/assets/img/gallery-06.webp"
+        ]
+      },
+      {
+        "name": "Grace A.",
+        "initials": "GA",
+        "when": "4 Days Ago",
+        "rating": 5,
+        "verified": true,
+        "product": "Model 3 · Ambient Lighting",
+        "text": "This company is awesome! The ambient lighting package I got came with everything I wanted for my car.. it makes the boring interior into something much more pleasing to drive. It looks amazing and very easy to control with an app on your phone. 10/10 service from this company!",
+        "media": [
+          "/assets/img/gallery-04.webp",
+          "/assets/img/gallery-11.webp",
+          "/assets/img/review-grace-3.webp"
+        ]
+      }
+    ],
+    "galleryTitle": "Gallery",
+    "gallerySubtitle": "Amazing Tesla transformations",
+    "_galleryNote": "show: both | desktop | mobile — matches which photos the Framer site showed on each layout.",
+    "gallery": [
+      {
+        "src": "/assets/img/gallery-01.webp",
+        "alt": "Tesla Model 3 ambient lighting install — full cabin glow at night",
+        "show": "both"
+      },
+      {
+        "src": "/assets/img/gallery-02.webp",
+        "alt": "Custom ambient lighting kit installed in Tesla Model Y interior",
+        "show": "desktop"
+      },
+      {
+        "src": "/assets/img/about-blue-cabin.webp",
+        "alt": "Tesla interior with blue ambient lighting",
+        "show": "mobile"
+      },
+      {
+        "src": "/assets/img/gallery-03.webp",
+        "alt": "Tesla Model 3 dashboard with ambient lighting strips installed",
+        "show": "both"
+      },
+      {
+        "src": "/assets/img/gallery-04.webp",
+        "alt": "Mobile install: Tesla ambient lighting glowing through footwell at dusk",
+        "show": "both"
+      },
+      {
+        "src": "/assets/img/gallery-05.webp",
+        "alt": "Tesla Model Y rear seats with ambient lighting reflecting on trim",
+        "show": "desktop"
+      },
+      {
+        "src": "/assets/img/gallery-06.webp",
+        "alt": "Wide cabin shot of Tesla Model 3 with ambient lighting glowing",
+        "show": "both"
+      },
+      {
+        "src": "/assets/img/gallery-10.webp",
+        "alt": "Tesla cabin with ambient lighting",
+        "show": "mobile"
+      },
+      {
+        "src": "/assets/img/gallery-07.webp",
+        "alt": "Tesla Model Y center console with ambient lighting trim",
+        "show": "both"
+      },
+      {
+        "src": "/assets/img/gallery-08.webp",
+        "alt": "Front cabin ambient lighting install — Tesla Model 3 driver view",
+        "show": "both"
+      },
+      {
+        "src": "/assets/img/gallery-09.webp",
+        "alt": "Tesla ambient lighting around door panels — clean factory-look install",
+        "show": "both"
+      },
+      {
+        "src": "/assets/img/gallery-11.webp",
+        "alt": "Tesla ambient lighting install photo",
+        "show": "mobile"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Built by Tesla owners, for Tesla owners.",
+    "image": "/assets/img/about-blue-cabin.webp",
+    "intro": "We started EV Works because every Tesla upgrade we'd ever bought, ambient lighting, PPF, tint, you name it, ended up at some shop where the work was sloppy, the appointment ran late, or someone left a scratch on the dashboard. After enough of those, we figured: the install should match the car. So we built a Tesla-specialist mobile install crew that comes to your driveway, knows the cars inside and out, and treats your interior like our own. Now we run EV upgrades across SoCal and you never have to sit in a waiting room again.",
+    "apartTitle": "What sets us apart",
+    "apart": [
+      {
+        "icon": "/assets/img/icon-truck.png",
+        "title": "We come to you",
+        "text": "Driveway, office parking lot, parking garage — we bring the shop to your Tesla. Mobile install means no rideshare back to work, no waiting room, no whole-day commitment."
+      },
+      {
+        "icon": "/assets/img/icon-tools.png",
+        "title": "Tesla-specialist crew",
+        "text": "We don't work on every car under the sun. Just Teslas. That means our crew knows every panel, every harness, every tolerance — so the install comes out looking like it left the factory that way."
+      },
+      {
+        "icon": "/assets/img/icon-shield.png",
+        "title": "Backed by our warranty",
+        "text": "Every install ships with a 6-month workmanship guarantee. If anything we did fails, we come back and fix it on us. Most shops won't put that in writing — we will."
+      }
+    ],
+    "howTitle": "How it works",
+    "how": [
+      {
+        "title": "Book your upgrade",
+        "text": "Browse EV upgrades by Tesla model — ambient lighting, Yoke steering wheel, or one of our other great products. Pick a model, pick a version, pick a date."
+      },
+      {
+        "title": "We drive out to you",
+        "text": "Tell us when and where in SoCal. We confirm same-day. Mobile install means we show up at your address with everything we need."
+      },
+      {
+        "title": "Quick and easy install",
+        "text": "Our professionally trained installers will quickly install ambient lighting or other upgrades being careful of your vehicle. We take pride in our work and have never damaged a car."
+      },
+      {
+        "title": "Enjoy your upgrade",
+        "text": "Every install comes with a 6-month workmanship warranty and lifetime EV Works support. If anything we did fails, we come back and fix it."
+      }
+    ],
+    "stats": [
+      {
+        "value": "500+",
+        "label": "TESLA INSTALLS",
+        "note": "Across SoCal since 2023"
+      },
+      {
+        "value": "4.9★",
+        "label": "AVERAGE RATING",
+        "note": "Verified customer reviews"
+      },
+      {
+        "value": "100%",
+        "label": "MOBILE INSTALL",
+        "note": "We come to you every time"
+      }
+    ],
+    "areaTitle": "Service area",
+    "areaText": "Driveway, office parking lot, parking garage — we'll bring the shop to your Tesla. Mobile install means you don't have to drive out through traffic to a shop and then find something to do while your car is being serviced."
+  },
+  "contact": {
+    "title": "Let's talk.",
+    "subtitle": "",
+    "phoneLabel": "Call or text",
+    "phoneValue": "+1 (949) 423-3631",
+    "socialLabel": "Instagram",
+    "socialValue": "MobileEVworks",
+    "info": [
+      {
+        "title": "Service area",
+        "value": "LA & all of SoCal",
+        "note": "Mobile install · We come to you"
+      },
+      {
+        "title": "Response time",
+        "value": "Installs available within 24 hours",
+        "note": "Questions answered within 24h"
+      }
+    ],
+    "topics": [
+      "Booking question",
+      "Custom install request",
+      "Body kits (coming soon)",
+      "Warranty / support",
+      "General question"
+    ],
+    "faq": [
+      {
+        "q": "Where do you install?",
+        "a": "We install at your driveway, office parking lot, or any safe outdoor space across LA and SoCal. Just give us a flat surface and enough room to work around the car."
+      },
+      {
+        "q": "How long does an install take?",
+        "a": "Most installs are done in under 3 hours."
+      },
+      {
+        "q": "What if my Tesla isn't listed?",
+        "a": "Reach out using the form above and tell us your model. We work with most Tesla models and can usually accommodate special requests."
+      },
+      {
+        "q": "What's your warranty?",
+        "a": "Every install comes with a 6-month workmanship guarantee. If something fails on our end, we fix it free. Extended 1-year warranty available as an add-on when you book."
+      },
+      {
+        "q": "Do you offer financing?",
+        "a": "Yes we do contact us for this!"
+      }
+    ],
+    "faqLead": "Something else on your mind? Call or text +1 (949) 423-3631, or send us a message above."
+  },
+  "pages": {
+    "index": {
+      "title": "Tesla Ambient Lighting & Upgrades LA | Mobile EV Works",
+      "description": "We bring premium Tesla upgrades to you. Free mobile installation across LA & SoCal, available within 24 hours. Model S, 3, X and Y. 6-month warranty included.",
+      "image": "/assets/img/ambient-purple-yoke.webp"
+    },
+    "info-page": {
+      "title": "About Mobile EV Works — Tesla Mobile Install Specialists in SoCal",
+      "description": "Mobile EV Works was started by Tesla owners for Tesla owners. A Tesla-only mobile install crew serving LA and Southern California, backed by a 6-month workmanship warranty.",
+      "image": "/assets/img/about-blue-cabin.webp"
+    },
+    "contact": {
+      "title": "Contact Mobile EV Works | Book Tesla Lighting LA",
+      "description": "Ready to upgrade your Tesla? Reach Mobile EV Works to schedule a free mobile install anywhere in LA & SoCal. Call or text +1 (949) 423-3631 — we reply within 24 hours.",
+      "image": "/assets/img/about-blue-cabin.webp"
+    },
+    "testimonials": {
+      "title": "Tesla Upgrade Reviews & Customer Photos | Mobile EV Works",
+      "description": "See why 500+ SoCal Tesla owners rate Mobile EV Works 4.9★. Real reviews, install photos & results from our mobile ambient lighting service.",
+      "image": "/assets/img/gallery-04.webp"
+    },
+    "shop": {
+      "title": "Shop Tesla Upgrades by Model — Free Mobile Install | Mobile EV Works",
+      "description": "Pick your Tesla — Model S, 3, X or Y — and browse ambient lighting, yoke wheels, rear screens and more. Free mobile install across LA & SoCal.",
+      "image": "/assets/img/ambient-purple-yoke.webp"
+    }
+  },
+  "phone": "+1 (949) 423-3631",
+  "shopLead": "Pick your Tesla to see every upgrade we install for it, with free mobile installation across LA & SoCal."
+}

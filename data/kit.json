@@ -1,0 +1,105 @@
+{
+  "_note": "The DIY product sold through Shopify. Everything on /performance-ambient-lighting-kit comes from this file. Copy is taken from the Amazon listing; nothing else is claimed.",
+  "handle": "performance-ambient-lighting-kit",
+  "url": "/performance-ambient-lighting-kit",
+  "navLabel": "Performance Kit",
+  "name": "Performance Ambient Lighting Kit",
+  "fullTitle": "EV Works Performance Ambient Lighting Kit for Tesla Model 3 and Model Y, 10-in-1 RGB LED Lights for Dashboard, 4 Doors, Center Console and 4 Footwells, App and Remote Control",
+  "shortLine": "Ten lights. One coordinated glow. For Tesla Model 3 and Model Y.",
+  "price": "165.00",
+  "currency": "USD",
+  "sku": "EVW-PAL-3Y",
+  "seo": {
+    "title": "Performance Ambient Lighting Kit for Tesla Model 3 & Model Y | EV Works",
+    "description": "10-in-1 RGB ambient lighting for Tesla Model 3 and Model Y: dashboard, all four doors, center console and four footwells. App and remote control. Non-destructive, fully reversible install. $165."
+  },
+
+  "_shopify": "Checkout is built but switched off. To sell: set enabled to true, add your store domain, a public Storefront API token and this product's variant ID (gid://shopify/ProductVariant/…). See README.",
+  "shopify": {
+    "enabled": false,
+    "storeDomain": "",
+    "storefrontToken": "",
+    "variantId": "",
+    "apiVersion": "2025-01"
+  },
+
+  "specs": [
+    { "value": "10", "label": "Lights in the kit", "note": "6 RGB strips and 4 footwell lights" },
+    { "value": "2–3 hrs", "label": "Estimated install", "note": "Non-destructive and fully reversible" },
+    { "value": "App + remote", "label": "Color and effects", "note": "Use the compatible app or the included remote" }
+  ],
+
+  "assurances": [
+    "Made for Tesla Model 3 and Model Y",
+    "App and remote control included",
+    "Non-destructive, fully reversible install",
+    "Install it yourself in an estimated 2–3 hours"
+  ],
+
+  "gallery": [
+    { "src": "/assets/img/products/ambient-lighting-3y-v1-1.webp", "alt": "Tesla Model 3 interior with red ambient lighting across the dashboard, doors and footwells" },
+    { "src": "/assets/img/products/ambient-lighting-3y-v1-2.webp", "alt": "Tesla Model 3 interior with blue ambient lighting along the dashboard" },
+    { "src": "/assets/img/gallery-07.webp", "alt": "Tesla Model Y cabin with purple ambient lighting and white seats" },
+    { "src": "/assets/img/gallery-03.webp", "alt": "Tesla cabin glowing purple at night" },
+    { "src": "/assets/img/carousel-ambient.webp", "alt": "Tesla Model 3 with the door open and red ambient lighting" }
+  ],
+
+  "description": [
+    "Bring a personalized glow to your cabin with the EV Works Performance Ambient Lighting Kit for Tesla Model 3 and Model Y. This 10-in-1 RGB LED setup lights the dashboard, all four doors and center console, with four additional footwell lights for a coordinated interior look.",
+    "The six lighting strips include one 140 cm strip, four 75 cm strips and one 35 cm strip. The kit also includes four footwell lights, a control unit, connecting wiring and a remote control. Use the compatible mobile app or included remote to choose lighting colors and effects that suit your style.",
+    "Installation is simple, non-destructive and fully reversible, with an estimated installation time of 2–3 hours. Test the complete kit before securing the lighting and routing the wiring. Keep cables clear of airbags, pedals, seat tracks and moving parts. Installation service is not included."
+  ],
+
+  "colors": [
+    { "name": "Ice", "hex": "#3fb8ff" },
+    { "name": "Amethyst", "hex": "#a259ff" },
+    { "name": "Crimson", "hex": "#ff2d3a" },
+    { "name": "Emerald", "hex": "#1fd68a" },
+    { "name": "Amber", "hex": "#ffa424" },
+    { "name": "White", "hex": "#ffffff" }
+  ],
+
+  "zones": [
+    { "id": "dash", "name": "Dashboard", "detail": "One 140 cm strip runs the width of the dash." },
+    { "id": "doors", "name": "All four doors", "detail": "Four 75 cm strips, one along each door." },
+    { "id": "console", "name": "Center console", "detail": "One 35 cm strip on the center console." },
+    { "id": "feet", "name": "Four footwells", "detail": "Four footwell lights, front and rear." }
+  ],
+  "measureNote": "Measurements refer to the illuminated strips, not the connecting wires.",
+
+  "inTheBox": [
+    { "qty": "1", "item": "140 cm RGB LED strip" },
+    { "qty": "4", "item": "75 cm RGB LED strips" },
+    { "qty": "1", "item": "35 cm RGB LED strip" },
+    { "qty": "4", "item": "Footwell lights" },
+    { "qty": "1", "item": "Control unit" },
+    { "qty": "1", "item": "Set of connecting wiring" },
+    { "qty": "1", "item": "Remote control" }
+  ],
+
+  "install": {
+    "title": "Fits in an afternoon. Leaves no trace.",
+    "text": "Installation is non-destructive and fully reversible, with an estimated fitting time of 2–3 hours.",
+    "steps": [
+      { "title": "Test the complete kit", "text": "Connect everything and check every light before you secure anything." },
+      { "title": "Secure the lights and route the wiring", "text": "Fit each strip and footwell light, then run the connecting wiring." },
+      { "title": "Keep the wiring clear", "text": "Keep cables away from airbags, pedals, seat tracks and moving parts." }
+    ],
+    "note": "Installation service is not included with the kit."
+  },
+
+  "story": {
+    "title": "Started in California by Tesla owners.",
+    "text": "EV Works creates accessories for Tesla owners who want a more personal driving experience."
+  },
+
+  "details": [
+    { "q": "Which cars does it fit?", "a": "Tesla Model 3 and Model Y. Check your specific vehicle's interior layout before installation." },
+    { "q": "How long are the strips?", "a": "One 140 cm strip, four 75 cm strips and one 35 cm strip. Measurements refer to the illuminated strips, not the connecting wires." },
+    { "q": "How do I change the color?", "a": "Use the compatible mobile app or the included remote control to choose lighting colors and effects." },
+    { "q": "Is installation included?", "a": "No. The kit is designed for you to install yourself in an estimated 2–3 hours. If you'd rather have it fitted, we offer mobile installation across LA and SoCal." },
+    { "q": "Is it permanent?", "a": "No. Installation is non-destructive and fully reversible." }
+  ],
+  "detailsLead": "Something we haven't answered? Call or text us.",
+  "disclaimer": "EV Works is an independent aftermarket brand and is not affiliated with Tesla."
+}
