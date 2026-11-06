@@ -301,11 +301,12 @@ const installsBlock = () => {
   </div>
 </section>`;
 };
-const kitWindow = (title, text) => `
+// The kit promo panel. Each page passes its own photo and light colour so it doesn't repeat.
+const kitWindow = (title, text, img = "/assets/img/night/band-home.webp", tint = "#3fb8ff") => `
 <section class="wrap k-section" aria-labelledby="hkit-title">
-  <div class="h-kit theme-dark">
+  <div class="h-kit theme-dark" style="--tint:${tint}">
     <div class="glow-photo" aria-hidden="true">
-      <img src="/assets/img/hero-ambient-purple.webp" alt="" loading="lazy">
+      <img src="${img}" alt="" loading="lazy">
       <span class="tint"></span>
     </div>
     <div class="h-kit-inner" data-stagger>
@@ -415,7 +416,7 @@ const shop = () => lightPage({
 </section>
 <section class="wrap k-section" aria-label="Start with ambient lighting" data-shop-banner>
   ${frame({
-    href: "/shop?category=ambient-lighting", img: "/assets/img/hero-ambient-purple.webp", alt: "Tesla interior glowing with purple ambient lighting",
+    href: "/shop?category=ambient-lighting", img: "/assets/img/night/shop-start.webp", alt: "Tesla interior at night with amber ambient lighting",
     title: "Not sure where to start?", lead: "Ambient lighting is our most popular upgrade. Pick your Tesla above, or start here.",
     actions: `<span class="kbtn kbtn-primary">Shop ambient lighting ${arrow}</span>`,
   })}
@@ -445,7 +446,7 @@ const collection = (c) => {
     ${c.products.map((h) => ptCard(byHandle[h])).join("\n    ")}
   </div>
 </section>
-${isKitCar ? kitWindow(site.home.kitTitle, site.home.kitText) : ""}
+${isKitCar ? kitWindow(site.home.kitTitle, site.home.kitText, "/assets/img/night/band-3y.webp", "#ff3fb8") : ""}
 ${reviewsBlock()}
 ${ctaBlock()}`,
   });
@@ -649,7 +650,7 @@ const contact = () => {
     body: `
 <section class="wrap contact">
   ${pHead(c.title, c.subtitle)}
-  ${frame({ img: "/assets/img/about-blue-cabin.webp", alt: "Tesla interior with blue ambient lighting", title: "We come to you anywhere in LA & SoCal.", lead: "Driveway, office lot or parking garage. Most installs take under 3 hours." })}
+  ${frame({ img: "/assets/img/night/contact.webp", alt: "Tesla interior at night with green ambient lighting", title: "We come to you anywhere in LA & SoCal.", lead: "Driveway, office lot or parking garage. Most installs take under 3 hours." })}
   <div class="contact-cards section-sm" data-stagger>
     <a class="card contact-card" href="${tel(c.phoneValue)}"><span class="ci">${ICON.phone}</span><span><small>${esc(c.phoneLabel)}</small><strong>${esc(c.phoneValue)}</strong></span></a>
     <a class="card contact-card" href="${site.instagram}" target="_blank" rel="noopener"><span class="ci">${ICON.instagram}</span><span><small>${esc(c.socialLabel)}</small><strong>${esc(c.socialValue)}</strong></span></a>
@@ -694,7 +695,9 @@ ${installsBlock()}`,
 };
 
 // ---------- SERVICE AREAS ----------
-const AREA_IMAGES = ["/assets/img/hero-ambient-purple.webp", "/assets/img/ambient-purple-yoke.webp", "/assets/img/carousel-ambient.webp", "/assets/img/about-blue-cabin.webp", "/assets/img/carousel-yoke.webp"];
+// Each city page gets its own night photo (public/assets/img/night/city-<slug>.webp); others fall back in turn.
+const AREA_IMAGES = ["/assets/img/night/city-santa-monica.webp", "/assets/img/night/city-los-angeles.webp", "/assets/img/night/city-beverly-hills.webp", "/assets/img/night/city-pasadena.webp", "/assets/img/night/city-long-beach.webp", "/assets/img/night/city-torrance.webp", "/assets/img/night/city-irvine.webp"];
+const areaImage = (slug, i) => fs.existsSync(path.join(ROOT, `public/assets/img/night/city-${slug}.webp`)) ? `/assets/img/night/city-${slug}.webp` : AREA_IMAGES[i % AREA_IMAGES.length];
 const featuredCards = () => areas.featured.map((h) => byHandle[h]).filter(Boolean).map(ptCard).join("\n    ");
 const AREA_HOW = site.about.how.slice(0, 3).concat([{ title: "Enjoy your upgrade", text: "Every install comes with a 6-month workmanship warranty and lifetime EV Works support. If anything we did fails, we come back and fix it." }]);
 
@@ -710,7 +713,7 @@ const serviceHub = () => lightPage({
 </section>
 <section class="wrap k-section" aria-label="Book a mobile install">
   ${frame({
-    href: "/shop", img: "/assets/img/carousel-ambient.webp", mobile: "/assets/img/carousel-ambient-mobile.webp", alt: "Tesla interior with red ambient lighting",
+    href: "/shop", img: "/assets/img/night/service-hub.webp", alt: "Tesla cabin at night with white ambient lighting",
     title: "Free mobile installs across LA & SoCal.", lead: "Pick your Tesla, choose your upgrade and send a booking request. We'll call to confirm a time.",
     actions: `<span class="kbtn kbtn-primary">Shop by model ${arrow}</span>`,
   })}
@@ -737,7 +740,7 @@ const cityPage = (c, i) => {
     areaServed: { "@type": "City", name: `${c.name}, CA` },
     url: `${site.url}/service-areas/${c.slug}`,
   };
-  const img = AREA_IMAGES[i % AREA_IMAGES.length];
+  const img = areaImage(c.slug, i);
   const nearby = c.nearby.map((s) => bySlug[s]).filter(Boolean).map((n) => `<a href="/service-areas/${n.slug}">${esc(n.name)}</a>`).join(", ");
   return lightPage({
     title, description, image: img, canonical: `/service-areas/${c.slug}`,
