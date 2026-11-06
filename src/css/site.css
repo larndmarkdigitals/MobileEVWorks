@@ -157,11 +157,21 @@ ol, ul { padding: 0; list-style: none; }
   transition: background-color .2s ease;
 }
 .nav > a:hover, .nav > a[aria-current="page"], .nav-products:hover > button, .site-header.mega-open .nav-products > button { background: rgba(23, 26, 32, .08); }
-.mega { display: none; position: absolute; left: 0; right: 0; top: var(--header-h); background: #fff; padding: 8px 0 28px; }
+/* Products dropdown. It closes after a short grace period (not instantly), so moving the
+   mouse from the button down to a model never makes it vanish on the way. */
+.mega {
+  position: absolute; left: 0; right: 0; top: var(--header-h); background: #fff; padding: 8px 0 28px;
+  visibility: hidden; opacity: 0; transform: translateY(-6px);
+  transition: opacity .18s ease .12s, transform .18s ease .12s, visibility 0s linear .3s;
+}
+/* invisible strip covering the gap between the button and the dropdown, across the full width */
+.mega::before { content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: calc(var(--header-h) - 42px); }
 .site-header:has(.nav-products:hover) .mega,
 .site-header:has(.mega:hover) .mega,
-.site-header.mega-open .mega { display: block; animation: drop .22s var(--ease); }
-@keyframes drop { from { opacity: 0; transform: translateY(-6px); } }
+.site-header.mega-open .mega {
+  visibility: visible; opacity: 1; transform: none;
+  transition: opacity .22s var(--ease), transform .22s var(--ease), visibility 0s;
+}
 .menu-btn { display: none; }
 
 /* ---------- Model cards (Shop by Model, menu, shop page) ---------- */
