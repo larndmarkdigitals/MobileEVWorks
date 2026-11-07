@@ -155,6 +155,21 @@ Right now Shopify holds the catalog; the website doesn't sell anything. Two scri
    ```
    Shopify controls titles, prices and availability. Photos and descriptions stay as set in `products.json`. Products are matched by handle and variants by SKU.
 
+## Private review pages
+
+Two pages are left out of the menu, the sitemap and Google (`noindex`, blocked in `robots.txt`). Answers from both arrive in Netlify → the site → **Forms**.
+
+- **`/photo-review`**: edited photos next to their originals, each with Approve / Needs changes and a reason. The list is in `data/photo-review.json`; bump `round` for each new round.
+- **`/copy-editor`**: every piece of text on the public pages, grouped by page, in editable boxes. It's collected automatically from the built pages, so new text shows up on its own.
+  - On the city pages, `[city]` stands for each city's name, so one edit covers all seven.
+  - Edits arrive as JSON in the `changes` field: `[{ page, original, edited }]`.
+  - To apply them, save that JSON to a file and run:
+    ```bash
+    node tools/apply-copy.mjs edits.json && npm run build
+    ```
+  - The tool finds each original in `data/*.json`, `build.mjs` and `src/js/`, replaces it, and lists anything it couldn't place so it can be done by hand.
+  - `node tools/apply-copy.mjs --audit` reports how many of the texts it can find (476 of 483 when this was set up).
+
 ## Performance Kit page (the product you sell)
 
 `/performance-ambient-lighting-kit` sells the DIY kit. Everything on it (name, price, photos, colors, box contents, FAQs) comes from `data/kit.json`. It's linked as **Performance Kit** in the menu on every page.

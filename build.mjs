@@ -795,7 +795,7 @@ ${reviewsBlock()}
 // ---------- PHOTO REVIEW (private, not linked or indexed) ----------
 // Answers are sent with Netlify Forms (form name "photo-review"); read them in Netlify → Forms.
 const pageName = (u) => {
-  const named = { "/": "Home", "/shop": "Shop", "/contact": "Contact", "/service-areas": "Service areas", [kit.url]: "Performance Kit page" };
+  const named = { "/": "Home", "/shop": "Shop", "/contact": "Contact", "/testimonials": "Testimonials", "/info-page": "About", "/service-areas": "Service areas", [kit.url]: "Performance Kit page" };
   if (named[u]) return named[u];
   const prod = u.match(/^\/product-stack-flat\/(.+)$/); if (prod && byHandle[prod[1]]) return `${byHandle[prod[1]].title} (${byHandle[prod[1]].compatibleModels.map((m) => m.replace("Model ", "")).join("/")}) booking page`;
   const car = site.collections.find((c) => u === `/cars/${c.handle}`); if (car) return `${car.title.replace("Tesla ", "")} page`;
@@ -852,6 +852,129 @@ const photoReview = () => {
   </form>
 </section>`,
     extraJs: "/assets/js/review.js",
+  });
+};
+
+
+// ---------- COPY EDITOR (private, not linked or indexed) ----------
+// Every piece of text on the public pages, grouped by page, as editable boxes.
+// Edits are sent with Netlify Forms (form "copy-edits") as JSON: [{page, original, edited}].
+const decodeHtml = (t) => t.replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n));
+const variantTitles = new Set(products.flatMap((p) => p.variants.map((v) => v.title)));
+// skip what isn't wording: numbers, prices, and labels built from product data ("Book Standard Kit", review dates)
+const notCopy = (t) => t.length < 2 || !/[A-Za-z]{2}/.test(t) || /^[\s$\d.,+%★→←·\-–—/:()]+$/.test(t)
+  || /^From \$/.test(t) || /^·/.test(t) || (/^Book /.test(t) && variantTitles.has(t.slice(5)));
+const pageCopy = (html) => {
+  const out = [];
+  const seen = new Set();
+  const push = (t, kind) => { t = decodeHtml(t).replace(/\s+/g, " ").trim(); if (!notCopy(t) && !seen.has(t)) { seen.add(t); out.push({ text: t, kind }); } };
+  const title = html.match(/<title>([^<]*)<\/title>/); if (title) push(title[1], "Google: page title");
+  const desc = html.match(/<meta name="description" content="([^"]*)"/); if (desc) push(desc[1], "Google: description");
+  let body = (html.split("<body")[1] || html)
+    .replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<svg[\s\S]*?<\/svg>/g, " ")
+    .replace(/<\/?(?:strong|em|i)\b[^>]*>/g, "");
+  for (const m of body.matchAll(/placeholder="([^"]+)"/g)) push(m[1], "Placeholder");
+  for (const m of body.matchAll(/>([^<]+)</g)) push(m[1], "");
+  return out;
+};
+const productCopy = (p) => {
+  const t = [];
+  for (const v of p.variants) {
+    t.push({ text: v.title, kind: "Version name" });
+    if (v.details) t.push({ text: v.details, kind: `${v.title}: Product details` });
+    if (v.included) t.push({ text: v.included, kind: `${v.title}: What's included` });
+  }
+  for (const [k, label] of [["includedFallback", "What's included (default)"], ["installInfo", "Installation info"], ["warranty", "Warranty"]]) if (p[k]) t.push({ text: p[k], kind: label });
+  if (p.addon && p.addon.title) t.push({ text: p.addon.title, kind: "Add-on" });
+  return t;
+};
+const copyEditor = () => {
+  // text shown on most pages (menu, footer, call button) is listed once
+  const counts = new Map();
+  const perPage = builtPages.map(([url, html]) => {
+    const items = pageCopy(html);
+    items.forEach((x) => counts.set(x.text, (counts.get(x.text) || 0) + 1));
+    return { url, items };
+  });
+  const everywhere = new Set([...counts].filter(([, n]) => n >= Math.ceil(builtPages.length * 0.6)).map(([t]) => t));
+  const shownElsewhere = new Set();
+  const norm = (t) => t.replace(/\s+/g, " ").trim();
+  const reviewKind = (t) => (/^“/.test(t) ? "Customer review: their own words, so typo fixes only" : "");
+  const groups = [{ url: "*", name: "On most pages (menu, footer, call button, reviews)", items: [...everywhere].map((text) => ({ text, kind: reviewKind(text) })) }];
+  // the 7 city pages share one template: show it once with [city] in place of the name
+  const cityShared = { url: "/service-areas/*", name: `All city pages (${areas.cities.map((c) => c.name).join(", ")})`, items: [] };
+  // a sentence is a shared template only if it shows up (with the city swapped) on 2+ city pages
+  const tplCount = new Map();
+  for (const pg of perPage) {
+    const c = areas.cities.find((x) => pg.url === `/service-areas/${x.slug}`); if (!c) continue;
+    for (const x of pg.items) if (x.text.includes(c.name)) { const t = x.text.split(c.name).join("[city]"); tplCount.set(t, (tplCount.get(t) || 0) + 1); }
+  }
+  for (const pg of perPage) {
+    let items = pg.items.filter((x) => !everywhere.has(x.text) && !(x.kind === "" && shownElsewhere.has(x.text)));
+    items.forEach((x) => shownElsewhere.add(x.text));
+    const city = areas.cities.find((c) => pg.url === `/service-areas/${c.slug}`);
+    if (city) {
+      const own = [];
+      for (const x of items) {
+        const t = x.text.split(city.name).join("[city]");
+        if (!x.text.includes(city.name) || (tplCount.get(t) || 0) < 2) { own.push(x); continue; }
+        if (!cityShared.items.some((y) => y.text === t)) cityShared.items.push({ text: t, kind: x.kind });
+      }
+      items = own;
+      if (city === areas.cities[0]) groups.push(cityShared);
+    }
+    const prod = pg.url.match(/^\/product-stack-flat\/(.+)$/);
+    if (prod && byHandle[prod[1]]) {
+      // use the product data (keeps its line breaks) instead of the flattened page text
+      const data = productCopy(byHandle[prod[1]]);
+      const flat = new Set(data.map((x) => norm(x.text)));
+      items = items.filter((x) => !flat.has(norm(x.text))).concat(data);
+    }
+    groups.push({ url: pg.url, name: pageName(pg.url), items });
+  }
+  let n = 0;
+  const box = (g, x) => {
+    const id = `c${n++}`;
+    const rows = Math.min(12, Math.max(1, Math.ceil(x.text.length / 70) + (x.text.match(/\n/g) || []).length));
+    return `
+        <div class="ce-item" data-page="${esc(g.url)}">
+          ${x.kind ? `<span class="ce-kind">${esc(x.kind)}</span>` : ""}
+          <textarea id="${id}" rows="${rows}" data-original="${esc(x.text)}" aria-label="Text on ${esc(g.name)}">${esc(x.text)}</textarea>
+          <div class="ce-tools"><span class="ce-was" hidden></span><button type="button" class="ce-reset" hidden>Undo change</button></div>
+        </div>`;
+  };
+  const total = groups.reduce((a, g) => a + g.items.length, 0);
+  return lightPage({
+    title: "Copy editor | Mobile EV Works", description: "Private page for editing the website's text.", image: "/assets/img/carousel-ambient.webp", canonical: "/copy-editor",
+    head: `<meta name="robots" content="noindex, nofollow">`,
+    bodyClass: "page-copy",
+    body: `
+<section class="wrap ce-wrap">
+  ${pHead("Copy editor", `All ${total} pieces of text on the site, grouped by page. Rewrite anything in your own words right in the box; changed text turns orange. On the city pages, [city] stands for each city's name, so one edit covers all seven. When you're done, send it and I'll put your wording on the site.`)}
+  <form class="ce-form" name="copy-edits" method="POST" action="/copy-editor/?sent=1" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="copy-edits">
+    <p class="pr-hp"><label>Leave empty <input name="bot-field"></label></p>
+    <textarea name="changes" class="ce-payload" hidden></textarea>
+    <div class="ce-bar">
+      <span class="ce-count" aria-live="polite">No changes yet</span>
+      <input type="search" class="ce-search" placeholder="Find text…" aria-label="Find text">
+      <label class="ce-only"><input type="checkbox"> Only my changes</label>
+    </div>
+    ${groups.filter((g) => g.items.length).map((g) => `
+    <details class="ce-group" ${g.url === "*" || g.url === "/" ? "open" : ""}>
+      <summary><span class="ce-name">${esc(g.name)}</span><span class="ce-meta">${g.url !== "*" ? `<a href="${g.url}" target="_blank" rel="noopener">View page</a> · ` : ""}<span class="ce-n">${g.items.length}</span> texts<span class="ce-edited"></span></span></summary>
+      <div class="ce-list">${g.items.map((x) => box(g, x)).join("")}
+      </div>
+    </details>`).join("")}
+    <section class="pr-group pr-end">
+      <label class="pr-note"><span>Anything else? <em>(optional)</em></span><textarea name="note" rows="3" placeholder="General notes on tone, words to avoid, anything."></textarea></label>
+      <p class="pr-error" hidden></p>
+      <button class="kbtn kbtn-primary ce-send" type="submit">Send my changes</button>
+      <p class="pr-done" hidden>Sent. I'll put your wording on the site.</p>
+    </section>
+  </form>
+</section>`,
+    extraJs: "/assets/js/copy-editor.js",
   });
 };
 
@@ -1046,10 +1169,11 @@ fs.mkdirSync(path.join(OUT, "assets/css"), { recursive: true });
 fs.mkdirSync(path.join(OUT, "assets/js"), { recursive: true });
 fs.copyFileSync(path.join(ROOT, "src/css/site.css"), path.join(OUT, "assets/css/site.css"));
 fs.copyFileSync(path.join(ROOT, "src/js/site.js"), path.join(OUT, "assets/js/site.js"));
-for (const f of ["css/premium.css", "css/kit.css", "css/pages.css", "js/kit.js", "js/review.js"]) fs.copyFileSync(path.join(ROOT, "src", f), path.join(OUT, "assets", f));
+for (const f of ["css/premium.css", "css/kit.css", "css/pages.css", "js/kit.js", "js/review.js", "js/copy-editor.js"]) fs.copyFileSync(path.join(ROOT, "src", f), path.join(OUT, "assets", f));
 
 const pages = [];
-const add = (rel, html, url) => { write(rel, html); pages.push(url); };
+const builtPages = []; // [url, html] of every public page, read by the copy editor
+const add = (rel, html, url) => { write(rel, html); pages.push(url); builtPages.push([url, html]); };
 add("index.html", home(), "/");
 add("testimonials/index.html", testimonials(), "/testimonials");
 add("info-page/index.html", about(), "/info-page");
@@ -1062,6 +1186,7 @@ add("service-areas/index.html", serviceHub(), "/service-areas");
 areas.cities.forEach((c, i) => add(`service-areas/${c.slug}/index.html`, cityPage(c, i), `/service-areas/${c.slug}`));
 write("404.html", notFound());
 write("photo-review/index.html", photoReview()); // private: left out of the sitemap and blocked in robots.txt
+write("copy-editor/index.html", copyEditor()); // private, same as above
 
 // Old Framer URLs → new ones (Netlify reads this file). Keeps Google rankings and old links working.
 const redirects = [
@@ -1073,5 +1198,5 @@ const redirects = [
 ];
 write("_redirects", redirects.map(([a, b]) => `${a}  ${b}  301\n${a}/  ${b}  301`).join("\n") + "\n");
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((u) => `<url><loc>${site.url}${u}</loc></url>`).join("\n")}\n</urlset>\n`);
-write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /photo-review\nSitemap: ${site.url}/sitemap.xml\n`);
+write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /photo-review\nDisallow: /copy-editor\nSitemap: ${site.url}/sitemap.xml\n`);
 console.log(`Built ${pages.length} pages into dist/`);
