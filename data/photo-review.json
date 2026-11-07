@@ -1,28 +1,124 @@
 {
   "_note": "Photos up for review on /photo-review. Each entry: id (used in the form), after (the edited photo on the site), before (what it was made from), tint (only for photos the page recolours), where it's used.",
-  "round": 1,
+  "round": 2,
   "photos": [
-    { "id": "product-v1-1", "group": "Ambient Lighting product photos", "title": "Standard Kit, photo 1 (red)", "after": "/assets/img/products/ambient-lighting-3y-v1-1.webp", "before": "/assets/img/review/ambient-lighting-3y-v1-1-before.webp", "usedOn": ["/product-stack-flat/ambient-lighting-3y", "/performance-ambient-lighting-kit"] },
-    { "id": "product-v1-2", "group": "Ambient Lighting product photos", "title": "Standard Kit, photo 2 (blue)", "after": "/assets/img/products/ambient-lighting-3y-v1-2.webp", "before": "/assets/img/review/ambient-lighting-3y-v1-2-before.webp", "usedOn": ["/product-stack-flat/ambient-lighting-3y", "/product-stack-flat/ambient-lighting-sx", "/performance-ambient-lighting-kit"] },
-    { "id": "product-v2-1", "group": "Ambient Lighting product photos", "title": "Performance Kit, photo 1 (red)", "after": "/assets/img/products/ambient-lighting-3y-v2-1.webp", "before": "/assets/img/review/ambient-lighting-3y-v2-1-before.webp", "usedOn": ["/product-stack-flat/ambient-lighting-3y"] },
-    { "id": "product-v2-2", "group": "Ambient Lighting product photos", "title": "Performance Kit, photo 2 (blue)", "after": "/assets/img/products/ambient-lighting-3y-v2-2.webp", "before": "/assets/img/review/ambient-lighting-3y-v2-2-before.webp", "usedOn": ["/product-stack-flat/ambient-lighting-3y", "/product-stack-flat/ambient-lighting-sx"] },
-    { "id": "product-v3-2", "group": "Ambient Lighting product photos", "title": "Plaid Kit (red)", "after": "/assets/img/products/ambient-lighting-3y-v3-2.webp", "before": "/assets/img/review/ambient-lighting-3y-v3-2-before.webp", "usedOn": ["/product-stack-flat/ambient-lighting-3y", "/product-stack-flat/ambient-lighting-sx"] },
-    { "id": "tile-ambient-3y", "group": "Ambient Lighting product photos", "title": "Ambient Lighting card (red)", "after": "/assets/img/tile-ambient-3y.webp", "before": "/assets/img/review/tile-ambient-3y-before.webp", "usedOn": ["/cars/tesla-model-3y", "/service-areas", "/performance-ambient-lighting-kit"] },
-
-    { "id": "feature-3y", "group": "Page photos", "title": "Model 3/Y page feature (purple)", "after": "/assets/img/night/feature-3y.webp", "before": "/assets/img/review/ambient-lighting-3y-v2-1-before.webp", "usedOn": ["/cars/tesla-model-3y"] },
-    { "id": "feature-sx", "group": "Page photos", "title": "Model S/X page feature (ice blue)", "after": "/assets/img/night/feature-sx.webp", "before": "/assets/img/products/ambient-lighting-sx-v2-1.webp", "usedOn": ["/cars/tesla-model-s-x"] },
-    { "id": "shop-start", "group": "Page photos", "title": "Shop page \"Not sure where to start?\" (amber)", "after": "/assets/img/night/shop-start.webp", "before": "/assets/img/review/ambient-lighting-3y-v3-2-before.webp", "usedOn": ["/shop"] },
-    { "id": "band-home", "group": "Page photos", "title": "\"Prefer to fit it yourself?\" panel, home page (ice blue)", "after": "/assets/img/night/band-home.webp", "before": "/assets/img/review/ambient-lighting-3y-v1-2-before.webp", "tint": "#3fb8ff", "usedOn": ["/"] },
-    { "id": "band-3y", "group": "Page photos", "title": "\"Prefer to fit it yourself?\" panel, Model 3/Y page (pink)", "after": "/assets/img/night/band-3y.webp", "before": "/assets/img/review/ambient-lighting-3y-v1-1-before.webp", "tint": "#ff3fb8", "usedOn": ["/cars/tesla-model-3y"] },
-    { "id": "contact", "group": "Page photos", "title": "Contact page (green)", "after": "/assets/img/night/contact.webp", "before": "/assets/img/review/ambient-lighting-3y-v2-2-before.webp", "usedOn": ["/contact"] },
-    { "id": "service-hub", "group": "Page photos", "title": "Service areas page (white)", "after": "/assets/img/night/service-hub.webp", "before": "/assets/img/gallery-06.webp", "usedOn": ["/service-areas"] },
-
-    { "id": "city-santa-monica", "group": "City pages", "title": "Santa Monica (purple)", "after": "/assets/img/night/city-santa-monica.webp", "before": "/assets/img/gallery-02.webp", "usedOn": ["/service-areas/santa-monica"] },
-    { "id": "city-los-angeles", "group": "City pages", "title": "Los Angeles (red)", "after": "/assets/img/night/city-los-angeles.webp", "before": "/assets/img/gallery-01.webp", "usedOn": ["/service-areas/los-angeles"] },
-    { "id": "city-beverly-hills", "group": "City pages", "title": "Beverly Hills (ice blue)", "after": "/assets/img/night/city-beverly-hills.webp", "before": "/assets/img/gallery-05.webp", "usedOn": ["/service-areas/beverly-hills"] },
-    { "id": "city-pasadena", "group": "City pages", "title": "Pasadena (amber)", "after": "/assets/img/night/city-pasadena.webp", "before": "/assets/img/gallery-09.webp", "usedOn": ["/service-areas/pasadena"] },
-    { "id": "city-long-beach", "group": "City pages", "title": "Long Beach (blue)", "after": "/assets/img/night/city-long-beach.webp", "before": "/assets/img/gallery-03.webp", "usedOn": ["/service-areas/long-beach"] },
-    { "id": "city-torrance", "group": "City pages", "title": "Torrance (pink)", "after": "/assets/img/night/city-torrance.webp", "before": "/assets/img/gallery-04.webp", "usedOn": ["/service-areas/torrance"] },
-    { "id": "city-irvine", "group": "City pages", "title": "Irvine (sunset orange)", "after": "/assets/img/night/city-irvine.webp", "before": "/assets/img/gallery-11.webp", "usedOn": ["/service-areas/irvine"] }
-  ]
+    {
+      "id": "product-v1-1",
+      "group": "Ambient Lighting product photos",
+      "title": "Standard Kit, photo 1 (red)",
+      "after": "/assets/img/products/ambient-lighting-3y-v1-1.webp",
+      "before": "/assets/img/review/ambient-lighting-3y-v1-1-before.webp",
+      "usedOn": [
+        "/product-stack-flat/ambient-lighting-3y",
+        "/performance-ambient-lighting-kit"
+      ]
+    },
+    {
+      "id": "product-v1-2",
+      "group": "Ambient Lighting product photos",
+      "title": "Standard Kit, photo 2 (blue)",
+      "after": "/assets/img/products/ambient-lighting-3y-v1-2.webp",
+      "before": "/assets/img/review/ambient-lighting-3y-v1-2-before.webp",
+      "usedOn": [
+        "/product-stack-flat/ambient-lighting-3y",
+        "/product-stack-flat/ambient-lighting-sx",
+        "/performance-ambient-lighting-kit"
+      ]
+    },
+    {
+      "id": "product-v2-1",
+      "group": "Ambient Lighting product photos",
+      "title": "Performance Kit, photo 1 (red)",
+      "after": "/assets/img/products/ambient-lighting-3y-v2-1.webp",
+      "before": "/assets/img/review/ambient-lighting-3y-v2-1-before.webp",
+      "usedOn": [
+        "/product-stack-flat/ambient-lighting-3y"
+      ]
+    },
+    {
+      "id": "product-v2-2",
+      "group": "Ambient Lighting product photos",
+      "title": "Performance Kit, photo 2 (blue)",
+      "after": "/assets/img/products/ambient-lighting-3y-v2-2.webp",
+      "before": "/assets/img/review/ambient-lighting-3y-v2-2-before.webp",
+      "usedOn": [
+        "/product-stack-flat/ambient-lighting-3y",
+        "/product-stack-flat/ambient-lighting-sx"
+      ]
+    },
+    {
+      "id": "product-v3-2",
+      "group": "Ambient Lighting product photos",
+      "title": "Plaid Kit (red)",
+      "after": "/assets/img/products/ambient-lighting-3y-v3-2.webp",
+      "before": "/assets/img/review/ambient-lighting-3y-v3-2-before.webp",
+      "usedOn": [
+        "/product-stack-flat/ambient-lighting-3y",
+        "/product-stack-flat/ambient-lighting-sx"
+      ]
+    },
+    {
+      "id": "tile-ambient-3y",
+      "group": "Ambient Lighting product photos",
+      "title": "Ambient Lighting card (red)",
+      "after": "/assets/img/tile-ambient-3y.webp",
+      "before": "/assets/img/review/tile-ambient-3y-before.webp",
+      "usedOn": [
+        "/cars/tesla-model-3y",
+        "/service-areas",
+        "/performance-ambient-lighting-kit"
+      ]
+    },
+    {
+      "id": "feature-3y",
+      "group": "Page photos",
+      "title": "Model 3/Y page feature (purple)",
+      "after": "/assets/img/night/feature-3y.webp",
+      "before": "/assets/img/review/ambient-lighting-3y-v2-1-before.webp",
+      "usedOn": [
+        "/cars/tesla-model-3y"
+      ]
+    },
+    {
+      "id": "shop-start",
+      "group": "Page photos",
+      "title": "Shop page \"Not sure where to start?\" (amber)",
+      "after": "/assets/img/night/shop-start.webp",
+      "before": "/assets/img/review/ambient-lighting-3y-v3-2-before.webp",
+      "usedOn": [
+        "/shop"
+      ]
+    },
+    {
+      "id": "band-home",
+      "group": "Page photos",
+      "title": "\"Prefer to fit it yourself?\" panel, home page (ice blue)",
+      "after": "/assets/img/night/band-home.webp",
+      "before": "/assets/img/review/ambient-lighting-3y-v1-2-before.webp",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "id": "band-3y",
+      "group": "Page photos",
+      "title": "\"Prefer to fit it yourself?\" panel, Model 3/Y page (pink)",
+      "after": "/assets/img/night/band-3y.webp",
+      "before": "/assets/img/review/ambient-lighting-3y-v1-1-before.webp",
+      "usedOn": [
+        "/cars/tesla-model-3y"
+      ]
+    },
+    {
+      "id": "contact",
+      "group": "Page photos",
+      "title": "Contact page (green)",
+      "after": "/assets/img/night/contact.webp",
+      "before": "/assets/img/review/ambient-lighting-3y-v2-2-before.webp",
+      "usedOn": [
+        "/contact"
+      ]
+    }
+  ],
+  "_round1": "Round 1 feedback: photos without white seats were already good, so those pages use the original photos again; Torrance's edit was approved. Round 2 reworks only the white-seat photos with a natural lighting method (LEDs untouched, seats darkened and lit by the nearby LEDs)."
 }

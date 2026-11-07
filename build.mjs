@@ -313,14 +313,11 @@ const installsBlock = () => {
   </div>
 </section>`;
 };
-// The kit promo panel. Each page passes its own photo and light colour so it doesn't repeat.
-const kitWindow = (title, text, img = "/assets/img/night/band-home.webp", tint = "#3fb8ff") => `
+// The kit promo panel. Each page passes its own photo (light colour baked in) so it doesn't repeat.
+const kitWindow = (title, text, img = "/assets/img/night/band-home.webp") => `
 <section class="wrap k-section" aria-labelledby="hkit-title">
-  <div class="h-kit theme-dark" style="--tint:${tint}">
-    <div class="glow-photo" aria-hidden="true">
-      <img src="${img}" alt="" loading="lazy">
-      <span class="tint"></span>
-    </div>
+  <div class="h-kit theme-dark">
+    <div class="h-kit-photo" aria-hidden="true"><img src="${img}" alt="" loading="lazy"></div>
     <div class="h-kit-inner" data-stagger>
       <h2 class="k-h2" id="hkit-title">${esc(title)}</h2>
       <p class="k-lead">${esc(text)}</p>
@@ -458,7 +455,7 @@ const collection = (c) => {
     ${c.products.map((h) => ptCard(byHandle[h])).join("\n    ")}
   </div>
 </section>
-${isKitCar ? kitWindow(site.home.kitTitle, site.home.kitText, "/assets/img/night/band-3y.webp", "#ff3fb8") : ""}
+${isKitCar ? kitWindow(site.home.kitTitle, site.home.kitText, "/assets/img/night/band-3y.webp") : ""}
 ${reviewsBlock()}
 ${ctaBlock()}`,
   });
@@ -707,9 +704,9 @@ ${installsBlock()}`,
 };
 
 // ---------- SERVICE AREAS ----------
-// Each city page gets its own night photo (public/assets/img/night/city-<slug>.webp); others fall back in turn.
-const AREA_IMAGES = ["/assets/img/night/city-santa-monica.webp", "/assets/img/night/city-los-angeles.webp", "/assets/img/night/city-beverly-hills.webp", "/assets/img/night/city-pasadena.webp", "/assets/img/night/city-long-beach.webp", "/assets/img/night/city-torrance.webp", "/assets/img/night/city-irvine.webp"];
-const areaImage = (slug, i) => fs.existsSync(path.join(ROOT, `public/assets/img/night/city-${slug}.webp`)) ? `/assets/img/night/city-${slug}.webp` : AREA_IMAGES[i % AREA_IMAGES.length];
+// Each city page has its own photo, set per city in data/service-areas.json ("image").
+const AREA_IMAGES = ["/assets/img/gallery-02.webp", "/assets/img/gallery-01.webp", "/assets/img/gallery-05.webp", "/assets/img/gallery-09.webp", "/assets/img/gallery-03.webp", "/assets/img/gallery-11.webp"];
+const areaImage = (c, i) => c.image || AREA_IMAGES[i % AREA_IMAGES.length];
 const featuredCards = () => areas.featured.map((h) => byHandle[h]).filter(Boolean).map(ptCard).join("\n    ");
 const AREA_HOW = site.about.how.slice(0, 3).concat([{ title: "Enjoy your upgrade", text: "Every install comes with a 6-month workmanship warranty and lifetime EV Works support. If anything we did fails, we come back and fix it." }]);
 
@@ -725,7 +722,7 @@ const serviceHub = () => lightPage({
 </section>
 <section class="wrap k-section" aria-label="Book a mobile install">
   ${frame({
-    href: "/shop", img: "/assets/img/night/service-hub.webp", alt: "Tesla cabin at night with white ambient lighting",
+    href: "/shop", img: "/assets/img/gallery-06.webp", alt: "Tesla cabin at night with purple ambient lighting",
     title: "Free mobile installs across LA & SoCal.", lead: "Pick your Tesla, choose your upgrade and send a booking request. We'll call to confirm a time.",
     actions: `<span class="kbtn kbtn-primary">Shop by model ${arrow}</span>`,
   })}
@@ -752,7 +749,7 @@ const cityPage = (c, i) => {
     areaServed: { "@type": "City", name: `${c.name}, CA` },
     url: `${site.url}/service-areas/${c.slug}`,
   };
-  const img = areaImage(c.slug, i);
+  const img = areaImage(c, i);
   const nearby = c.nearby.map((s) => bySlug[s]).filter(Boolean).map((n) => `<a href="/service-areas/${n.slug}">${esc(n.name)}</a>`).join(", ");
   return lightPage({
     title, description, image: img, canonical: `/service-areas/${c.slug}`,

@@ -10,7 +10,6 @@
    ========================================================= */
 
 .theme-light { --k-section: clamp(72px, 7vw, 112px); --k-h3: clamp(20px, 1.5vw, 24px); }
-.theme-light .h-kit { --tint: #3fb8ff; }
 
 /* ---------- Page opening: big left-aligned title ---------- */
 .p-head { padding-top: clamp(40px, 5vw, 80px); }
@@ -109,7 +108,8 @@ a.frame:hover .frame-photo img, a.frame:hover > img { transform: scale(1.03); }
 /* ---------- Dark windows: the kit and the story ---------- */
 .h-kit, .h-story { position: relative; overflow: hidden; border-radius: var(--r-card); }
 .h-kit { display: flex; align-items: center; min-height: clamp(520px, 42vw, 680px); }
-.h-kit .glow-photo img { object-position: 70% 55%; }
+.h-kit-photo { position: absolute; inset: 0; background: #000; }
+.h-kit-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 55%; }
 .h-kit::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(10,10,11,.95) 0%, rgba(10,10,11,.72) 34%, rgba(10,10,11,0) 66%); }
 .h-kit-inner { position: relative; z-index: 1; padding: clamp(32px, 4.5vw, 72px); }
 .h-kit-inner > * { max-width: 560px; }
@@ -214,8 +214,8 @@ a.frame:hover .frame-photo img, a.frame:hover > img { transform: scale(1.03); }
   .hu-dots { justify-content: center; margin-top: 28px; }
   /* dark windows: photo on top, words underneath */
   .h-kit, .h-story { display: block; min-height: 0; --ph: clamp(240px, 56vw, 420px); }
-  .h-kit .glow-photo { position: relative; height: var(--ph); }
-  .h-kit .glow-photo img { object-position: 68% 50%; }
+  .h-kit-photo { position: relative; height: var(--ph); }
+  .h-kit-photo img { object-position: 68% 50%; }
   .h-kit::after { inset: 0 0 auto 0; height: var(--ph); background: linear-gradient(180deg, rgba(10,10,11,0) 55%, var(--k-bg) 100%); }
   .h-story > img { position: relative; inset: auto; height: var(--ph); }
   .h-story::after { inset: 0 0 auto 0; height: var(--ph); background: linear-gradient(180deg, rgba(10,10,11,0) 55%, var(--k-bg) 100%); }
