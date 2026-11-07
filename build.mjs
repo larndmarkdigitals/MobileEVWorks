@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 // Mobile EV Works — static site builder (Node 18+, no dependencies)
 // Reads data/*.json + src/ and writes plain HTML into dist/.
 //   npm run build
@@ -28,10 +29,21 @@ const money = (n) => "$" + Number(n).toFixed(2);
 const minPrice = (p) => Math.min(...p.variants.map((v) => parseFloat(v.price)));
 const tel = (p) => "tel:" + p.replace(/[^0-9+]/g, "");
 const modelsText = (p) => p.compatibleModels.join(" & ");
+// Images are cached by browsers for a day, so each image URL carries a hash of the file:
+// edit a photo and its URL changes, so visitors see the new one straight away.
+const imgHashes = {};
+const imgHash = (url) => {
+  if (!(url in imgHashes)) {
+    const f = path.join(ROOT, "public", url);
+    imgHashes[url] = fs.existsSync(f) ? crypto.createHash("md5").update(fs.readFileSync(f)).digest("hex").slice(0, 8) : "";
+  }
+  return imgHashes[url];
+};
+const bustImages = (html) => html.replace(/\/assets\/img\/[A-Za-z0-9_\-\/.]+\.(?:webp|png|jpe?g|svg)(?![?\w])/g, (u) => (imgHash(u) ? `${u}?v=${imgHash(u)}` : u));
 const write = (rel, html) => {
   const file = path.join(OUT, rel);
   fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, html);
+  fs.writeFileSync(file, /\.html$/.test(rel) ? bustImages(html) : html);
 };
 const copyDir = (from, to) => {
   if (!fs.existsSync(from)) return;
@@ -782,6 +794,70 @@ ${reviewsBlock()}
 };
 
 
+
+// ---------- PHOTO REVIEW (private, not linked or indexed) ----------
+// Answers are sent with Netlify Forms (form name "photo-review"); read them in Netlify → Forms.
+const pageName = (u) => {
+  const named = { "/": "Home", "/shop": "Shop", "/contact": "Contact", "/service-areas": "Service areas", [kit.url]: "Performance Kit page" };
+  if (named[u]) return named[u];
+  const prod = u.match(/^\/product-stack-flat\/(.+)$/); if (prod && byHandle[prod[1]]) return `${byHandle[prod[1]].title} (${byHandle[prod[1]].compatibleModels.map((m) => m.replace("Model ", "")).join("/")}) booking page`;
+  const car = site.collections.find((c) => u === `/cars/${c.handle}`); if (car) return `${car.title.replace("Tesla ", "")} page`;
+  const city = areas.cities.find((c) => u === `/service-areas/${c.slug}`); if (city) return `${city.name} page`;
+  return u;
+};
+const photoReview = () => {
+  const r = readJson("data/photo-review.json");
+  const groups = [...new Set(r.photos.map((x) => x.group))];
+  const shot = (src, alt, tint) => tint
+    ? `<div class="pr-img glow-photo" style="--tint:${tint}"><img src="${src}" alt="${esc(alt)}" loading="lazy"><span class="tint"></span></div>`
+    : `<div class="pr-img"><img src="${src}" alt="${esc(alt)}" loading="lazy"></div>`;
+  const card = (x) => `
+      <article class="pr-card" data-id="${x.id}">
+        <div class="pr-pics">
+          <figure class="pr-before"><figcaption>Before</figcaption>${shot(x.before, "Original: " + x.title)}</figure>
+          <figure class="pr-after"><figcaption>New</figcaption>${shot(x.after, "New: " + x.title, x.tint)}</figure>
+        </div>
+        <div class="pr-body">
+          <h3>${esc(x.title)}</h3>
+          <p class="pr-used">Used on ${x.usedOn.map((u) => `<a href="${u}" target="_blank" rel="noopener">${esc(pageName(u))}</a>`).join(", ")}</p>
+          <div class="pr-choice" role="radiogroup" aria-label="Decision for ${esc(x.title)}">
+            <label class="pr-opt pr-yes"><input type="radio" name="${x.id}" value="approve"><span>Approve</span></label>
+            <label class="pr-opt pr-no"><input type="radio" name="${x.id}" value="change"><span>Needs changes</span></label>
+          </div>
+          <label class="pr-note"><span>What should change? <em>(needed if you pick “Needs changes”)</em></span>
+            <textarea name="${x.id}-note" rows="2" placeholder="e.g. too dark, wrong colour, the seats look fake…"></textarea></label>
+        </div>
+      </article>`;
+  return lightPage({
+    title: "Photo review | Mobile EV Works", description: "Private page for approving edited photos.", image: r.photos[0].after, canonical: "/photo-review",
+    head: `<meta name="robots" content="noindex, nofollow">`,
+    bodyClass: "page-review",
+    body: `
+<section class="wrap pr-wrap">
+  ${pHead("Photo review", "Every photo I've edited, with the original next to it. Approve the ones you like; for the rest, pick “Needs changes” and say why. Send it when you're done and I'll rework the ones you flagged.")}
+  <form class="pr-form" name="photo-review" method="POST" action="/photo-review/?sent=1" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="photo-review">
+    <input type="hidden" name="round" value="${r.round}">
+    <p class="pr-hp"><label>Leave empty <input name="bot-field"></label></p>
+    <div class="pr-bar" aria-live="polite"><span class="pr-count">0 of ${r.photos.length} reviewed</span><span class="pr-split"></span></div>
+    ${groups.map((g) => `
+    <section class="pr-group" aria-label="${esc(g)}">
+      <h2 class="k-h2">${esc(g)}</h2>
+      <div class="pr-list">${r.photos.filter((x) => x.group === g).map(card).join("")}
+      </div>
+    </section>`).join("")}
+    <section class="pr-group pr-end">
+      <label class="pr-note"><span>Anything else? <em>(optional)</em></span><textarea name="general-note" rows="3" placeholder="Overall thoughts, photos you'd like added, anything."></textarea></label>
+      <p class="pr-error" hidden></p>
+      <button class="kbtn kbtn-primary pr-send" type="submit">Send review</button>
+      <p class="pr-done" hidden>Sent. Thanks! I'll rework the photos you flagged.</p>
+    </section>
+  </form>
+</section>`,
+    extraJs: "/assets/js/review.js",
+  });
+};
+
 // ---------- PERFORMANCE KIT (DIY product, Shopify) ----------
 const kitPage = () => {
   const k = kit;
@@ -973,7 +1049,7 @@ fs.mkdirSync(path.join(OUT, "assets/css"), { recursive: true });
 fs.mkdirSync(path.join(OUT, "assets/js"), { recursive: true });
 fs.copyFileSync(path.join(ROOT, "src/css/site.css"), path.join(OUT, "assets/css/site.css"));
 fs.copyFileSync(path.join(ROOT, "src/js/site.js"), path.join(OUT, "assets/js/site.js"));
-for (const f of ["css/premium.css", "css/kit.css", "css/pages.css", "js/kit.js"]) fs.copyFileSync(path.join(ROOT, "src", f), path.join(OUT, "assets", f));
+for (const f of ["css/premium.css", "css/kit.css", "css/pages.css", "js/kit.js", "js/review.js"]) fs.copyFileSync(path.join(ROOT, "src", f), path.join(OUT, "assets", f));
 
 const pages = [];
 const add = (rel, html, url) => { write(rel, html); pages.push(url); };
@@ -988,6 +1064,7 @@ for (const p of products) add(`product-stack-flat/${p.handle}/index.html`, produ
 add("service-areas/index.html", serviceHub(), "/service-areas");
 areas.cities.forEach((c, i) => add(`service-areas/${c.slug}/index.html`, cityPage(c, i), `/service-areas/${c.slug}`));
 write("404.html", notFound());
+write("photo-review/index.html", photoReview()); // private: left out of the sitemap and blocked in robots.txt
 
 // Old Framer URLs → new ones (Netlify reads this file). Keeps Google rankings and old links working.
 const redirects = [
@@ -999,5 +1076,5 @@ const redirects = [
 ];
 write("_redirects", redirects.map(([a, b]) => `${a}  ${b}  301\n${a}/  ${b}  301`).join("\n") + "\n");
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((u) => `<url><loc>${site.url}${u}</loc></url>`).join("\n")}\n</urlset>\n`);
-write("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`);
+write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /photo-review\nSitemap: ${site.url}/sitemap.xml\n`);
 console.log(`Built ${pages.length} pages into dist/`);
